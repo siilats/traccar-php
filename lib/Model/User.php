@@ -76,6 +76,7 @@ class User implements ModelInterface, ArrayAccess
         'device_readonly' => 'bool',
         'limit_commands' => 'bool',
         'token' => 'string',
+        'attributes' => '\Swagger\Client\Model\UserAttributes',
         'phone' => 'string'
     ];
 
@@ -104,6 +105,7 @@ class User implements ModelInterface, ArrayAccess
         'device_readonly' => null,
         'limit_commands' => null,
         'token' => null,
+        'attributes' => null,
         'phone' => null
     ];
 
@@ -153,6 +155,7 @@ class User implements ModelInterface, ArrayAccess
         'device_readonly' => 'deviceReadonly',
         'limit_commands' => 'limitCommands',
         'token' => 'token',
+        'attributes' => 'attributes',
         'phone' => 'phone'
     ];
 
@@ -181,6 +184,7 @@ class User implements ModelInterface, ArrayAccess
         'device_readonly' => 'setDeviceReadonly',
         'limit_commands' => 'setLimitCommands',
         'token' => 'setToken',
+        'attributes' => 'setAttributes',
         'phone' => 'setPhone'
     ];
 
@@ -209,6 +213,7 @@ class User implements ModelInterface, ArrayAccess
         'device_readonly' => 'getDeviceReadonly',
         'limit_commands' => 'getLimitCommands',
         'token' => 'getToken',
+        'attributes' => 'getAttributes',
         'phone' => 'getPhone'
     ];
 
@@ -291,6 +296,7 @@ class User implements ModelInterface, ArrayAccess
         $this->container['device_readonly'] = isset($data['device_readonly']) ? $data['device_readonly'] : null;
         $this->container['limit_commands'] = isset($data['limit_commands']) ? $data['limit_commands'] : null;
         $this->container['token'] = isset($data['token']) ? $data['token'] : null;
+        $this->container['attributes'] = isset($data['attributes']) ? $data['attributes'] : null;
         $this->container['phone'] = isset($data['phone']) ? $data['phone'] : null;
     }
 
@@ -771,6 +777,30 @@ class User implements ModelInterface, ArrayAccess
     public function setToken($token)
     {
         $this->container['token'] = $token;
+
+        return $this;
+    }
+
+    /**
+     * Gets attributes
+     *
+     * @return \Swagger\Client\Model\UserAttributes
+     */
+    public function getAttributes()
+    {
+        return $this->container['attributes'];
+    }
+
+    /**
+     * Sets attributes
+     *
+     * @param \Swagger\Client\Model\UserAttributes $attributes attributes
+     *
+     * @return $this
+     */
+    public function setAttributes($attributes)
+    {
+        $this->container['attributes'] = $attributes;
 
         return $this;
     }

@@ -211,6 +211,13 @@ class UserTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "attributes"
+     */
+    public function testPropertyAttributes()
+    {
+    }
+
+    /**
      * Test attribute "phone"
      */
     public function testPropertyPhone()

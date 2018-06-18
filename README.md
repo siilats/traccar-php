@@ -170,6 +170,7 @@ Class | Method | HTTP request | Description
  - [Server](docs/Model/Server.md)
  - [Statistics](docs/Model/Statistics.md)
  - [User](docs/Model/User.md)
+ - [UserAttributes](docs/Model/UserAttributes.md)
 
 
 ## Documentation For Authorization
