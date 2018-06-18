@@ -60,6 +60,7 @@ class UserAttributes implements ModelInterface, ArrayAccess
         'has_email' => 'bool',
         'has_phone' => 'bool',
         'has_phone_verified' => 'bool',
+        'sms_code' => 'int',
         'has_deposit' => 'bool',
         'has_ride' => 'bool'
     ];
@@ -73,6 +74,7 @@ class UserAttributes implements ModelInterface, ArrayAccess
         'has_email' => null,
         'has_phone' => null,
         'has_phone_verified' => null,
+        'sms_code' => null,
         'has_deposit' => null,
         'has_ride' => null
     ];
@@ -107,6 +109,7 @@ class UserAttributes implements ModelInterface, ArrayAccess
         'has_email' => 'hasEmail',
         'has_phone' => 'hasPhone',
         'has_phone_verified' => 'hasPhoneVerified',
+        'sms_code' => 'smsCode',
         'has_deposit' => 'hasDeposit',
         'has_ride' => 'hasRide'
     ];
@@ -120,6 +123,7 @@ class UserAttributes implements ModelInterface, ArrayAccess
         'has_email' => 'setHasEmail',
         'has_phone' => 'setHasPhone',
         'has_phone_verified' => 'setHasPhoneVerified',
+        'sms_code' => 'setSmsCode',
         'has_deposit' => 'setHasDeposit',
         'has_ride' => 'setHasRide'
     ];
@@ -133,6 +137,7 @@ class UserAttributes implements ModelInterface, ArrayAccess
         'has_email' => 'getHasEmail',
         'has_phone' => 'getHasPhone',
         'has_phone_verified' => 'getHasPhoneVerified',
+        'sms_code' => 'getSmsCode',
         'has_deposit' => 'getHasDeposit',
         'has_ride' => 'getHasRide'
     ];
@@ -200,6 +205,7 @@ class UserAttributes implements ModelInterface, ArrayAccess
         $this->container['has_email'] = isset($data['has_email']) ? $data['has_email'] : null;
         $this->container['has_phone'] = isset($data['has_phone']) ? $data['has_phone'] : null;
         $this->container['has_phone_verified'] = isset($data['has_phone_verified']) ? $data['has_phone_verified'] : null;
+        $this->container['sms_code'] = isset($data['sms_code']) ? $data['sms_code'] : null;
         $this->container['has_deposit'] = isset($data['has_deposit']) ? $data['has_deposit'] : null;
         $this->container['has_ride'] = isset($data['has_ride']) ? $data['has_ride'] : null;
     }
@@ -296,6 +302,30 @@ class UserAttributes implements ModelInterface, ArrayAccess
     public function setHasPhoneVerified($has_phone_verified)
     {
         $this->container['has_phone_verified'] = $has_phone_verified;
+
+        return $this;
+    }
+
+    /**
+     * Gets sms_code
+     *
+     * @return int
+     */
+    public function getSmsCode()
+    {
+        return $this->container['sms_code'];
+    }
+
+    /**
+     * Sets sms_code
+     *
+     * @param int $sms_code sms_code
+     *
+     * @return $this
+     */
+    public function setSmsCode($sms_code)
+    {
+        $this->container['sms_code'] = $sms_code;
 
         return $this;
     }
