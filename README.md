@@ -20,11 +20,11 @@ To install the bindings via [Composer](http://getcomposer.org/), add the followi
   "repositories": [
     {
       "type": "git",
-      "url": "https://github.com//.git"
+      "url": "https://github.com/siilats/traccar-php.git"
     }
   ],
   "require": {
-    "/": "*@dev"
+    "siilats/traccar-php": "*@dev"
   }
 }
 ```
@@ -57,6 +57,7 @@ Please follow the [installation procedure](#installation--usage) and then run th
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure HTTP basic authorization: basicAuth
+$config = Swagger\Client\Configuration::getDefaultConfiguration()
     ->setUsername('YOUR_USERNAME')
     ->setPassword('YOUR_PASSWORD');
 

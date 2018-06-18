@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **contact** | **string** |  | [optional] 
 **category** | **string** |  | [optional] 
 **geofence_ids** | **int[]** |  | [optional] 
+**attributes** | [****](.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

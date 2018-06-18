@@ -18,6 +18,7 @@ Name | Type | Description | Notes
 **version** | **string** |  | [optional] 
 **force_settings** | **bool** |  | [optional] 
 **coordinate_format** | **string** |  | [optional] 
+**attributes** | [****](.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
