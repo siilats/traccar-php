@@ -60,7 +60,7 @@ class Driver implements ModelInterface, ArrayAccess
         'id' => 'int',
         'name' => 'string',
         'unique_id' => 'string',
-        'atributes' => ''
+        'attributes' => '\Swagger\Client\Model\PositionAttributes'
     ];
 
     /**
@@ -72,7 +72,7 @@ class Driver implements ModelInterface, ArrayAccess
         'id' => null,
         'name' => null,
         'unique_id' => null,
-        'atributes' => null
+        'attributes' => null
     ];
 
     /**
@@ -105,7 +105,7 @@ class Driver implements ModelInterface, ArrayAccess
         'id' => 'id',
         'name' => 'name',
         'unique_id' => 'uniqueId',
-        'atributes' => 'atributes'
+        'attributes' => 'attributes'
     ];
 
     /**
@@ -117,7 +117,7 @@ class Driver implements ModelInterface, ArrayAccess
         'id' => 'setId',
         'name' => 'setName',
         'unique_id' => 'setUniqueId',
-        'atributes' => 'setAtributes'
+        'attributes' => 'setAttributes'
     ];
 
     /**
@@ -129,7 +129,7 @@ class Driver implements ModelInterface, ArrayAccess
         'id' => 'getId',
         'name' => 'getName',
         'unique_id' => 'getUniqueId',
-        'atributes' => 'getAtributes'
+        'attributes' => 'getAttributes'
     ];
 
     /**
@@ -195,7 +195,7 @@ class Driver implements ModelInterface, ArrayAccess
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['unique_id'] = isset($data['unique_id']) ? $data['unique_id'] : null;
-        $this->container['atributes'] = isset($data['atributes']) ? $data['atributes'] : null;
+        $this->container['attributes'] = isset($data['attributes']) ? $data['attributes'] : null;
     }
 
     /**
@@ -295,25 +295,25 @@ class Driver implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets atributes
+     * Gets attributes
      *
-     * @return 
+     * @return \Swagger\Client\Model\PositionAttributes
      */
-    public function getAtributes()
+    public function getAttributes()
     {
-        return $this->container['atributes'];
+        return $this->container['attributes'];
     }
 
     /**
-     * Sets atributes
+     * Sets attributes
      *
-     * @param  $atributes atributes
+     * @param \Swagger\Client\Model\PositionAttributes $attributes attributes
      *
      * @return $this
      */
-    public function setAtributes($atributes)
+    public function setAttributes($attributes)
     {
-        $this->container['atributes'] = $atributes;
+        $this->container['attributes'] = $attributes;
 
         return $this;
     }

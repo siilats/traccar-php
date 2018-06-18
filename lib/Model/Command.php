@@ -63,7 +63,7 @@ class Command implements ModelInterface, ArrayAccess
         'type' => 'string',
         'data' => 'string',
         'text_channel' => 'bool',
-        'attributes' => '\Swagger\Client\Model\CommandAttributes'
+        'attributes' => '\Swagger\Client\Model\PositionAttributes'
     ];
 
     /**
@@ -387,7 +387,7 @@ class Command implements ModelInterface, ArrayAccess
     /**
      * Gets attributes
      *
-     * @return \Swagger\Client\Model\CommandAttributes
+     * @return \Swagger\Client\Model\PositionAttributes
      */
     public function getAttributes()
     {
@@ -397,7 +397,7 @@ class Command implements ModelInterface, ArrayAccess
     /**
      * Sets attributes
      *
-     * @param \Swagger\Client\Model\CommandAttributes $attributes attributes
+     * @param \Swagger\Client\Model\PositionAttributes $attributes attributes
      *
      * @return $this
      */

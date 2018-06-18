@@ -63,7 +63,7 @@ class Notification implements ModelInterface, ArrayAccess
         'web' => 'bool',
         'mail' => 'bool',
         'sms' => 'bool',
-        'attributes' => ''
+        'attributes' => '\Swagger\Client\Model\PositionAttributes'
     ];
 
     /**
@@ -387,7 +387,7 @@ class Notification implements ModelInterface, ArrayAccess
     /**
      * Gets attributes
      *
-     * @return 
+     * @return \Swagger\Client\Model\PositionAttributes
      */
     public function getAttributes()
     {
@@ -397,7 +397,7 @@ class Notification implements ModelInterface, ArrayAccess
     /**
      * Sets attributes
      *
-     * @param  $attributes attributes
+     * @param \Swagger\Client\Model\PositionAttributes $attributes attributes
      *
      * @return $this
      */

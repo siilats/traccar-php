@@ -69,7 +69,7 @@ class Device implements ModelInterface, ArrayAccess
         'contact' => 'string',
         'category' => 'string',
         'geofence_ids' => 'int[]',
-        'attributes' => ''
+        'attributes' => '\Swagger\Client\Model\PositionAttributes'
     ];
 
     /**
@@ -567,7 +567,7 @@ class Device implements ModelInterface, ArrayAccess
     /**
      * Gets attributes
      *
-     * @return 
+     * @return \Swagger\Client\Model\PositionAttributes
      */
     public function getAttributes()
     {
@@ -577,7 +577,7 @@ class Device implements ModelInterface, ArrayAccess
     /**
      * Sets attributes
      *
-     * @param  $attributes attributes
+     * @param \Swagger\Client\Model\PositionAttributes $attributes attributes
      *
      * @return $this
      */

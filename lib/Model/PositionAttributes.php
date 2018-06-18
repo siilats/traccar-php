@@ -1,6 +1,6 @@
 <?php
 /**
- * Calendar
+ * PositionAttributes
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \Swagger\Client\ObjectSerializer;
 
 /**
- * Calendar Class Doc Comment
+ * PositionAttributes Class Doc Comment
  *
  * @category Class
  * @package  Swagger\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class Calendar implements ModelInterface, ArrayAccess
+class PositionAttributes implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class Calendar implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'Calendar';
+    protected static $swaggerModelName = 'Position_attributes';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,10 +57,7 @@ class Calendar implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'id' => 'int',
-        'name' => 'string',
-        'data' => 'string',
-        'attributes' => '\Swagger\Client\Model\PositionAttributes'
+        'data' => 'string'
     ];
 
     /**
@@ -69,10 +66,7 @@ class Calendar implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'id' => null,
-        'name' => null,
-        'data' => null,
-        'attributes' => null
+        'data' => null
     ];
 
     /**
@@ -102,10 +96,7 @@ class Calendar implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'id' => 'id',
-        'name' => 'name',
-        'data' => 'data',
-        'attributes' => 'attributes'
+        'data' => 'data'
     ];
 
     /**
@@ -114,10 +105,7 @@ class Calendar implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'id' => 'setId',
-        'name' => 'setName',
-        'data' => 'setData',
-        'attributes' => 'setAttributes'
+        'data' => 'setData'
     ];
 
     /**
@@ -126,10 +114,7 @@ class Calendar implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'id' => 'getId',
-        'name' => 'getName',
-        'data' => 'getData',
-        'attributes' => 'getAttributes'
+        'data' => 'getData'
     ];
 
     /**
@@ -192,10 +177,7 @@ class Calendar implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
-        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['data'] = isset($data['data']) ? $data['data'] : null;
-        $this->container['attributes'] = isset($data['attributes']) ? $data['attributes'] : null;
     }
 
     /**
@@ -223,54 +205,6 @@ class Calendar implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets id
-     *
-     * @return int
-     */
-    public function getId()
-    {
-        return $this->container['id'];
-    }
-
-    /**
-     * Sets id
-     *
-     * @param int $id id
-     *
-     * @return $this
-     */
-    public function setId($id)
-    {
-        $this->container['id'] = $id;
-
-        return $this;
-    }
-
-    /**
-     * Gets name
-     *
-     * @return string
-     */
-    public function getName()
-    {
-        return $this->container['name'];
-    }
-
-    /**
-     * Sets name
-     *
-     * @param string $name name
-     *
-     * @return $this
-     */
-    public function setName($name)
-    {
-        $this->container['name'] = $name;
-
-        return $this;
-    }
-
-    /**
      * Gets data
      *
      * @return string
@@ -283,37 +217,13 @@ class Calendar implements ModelInterface, ArrayAccess
     /**
      * Sets data
      *
-     * @param string $data base64 encoded in iCalendar format
+     * @param string $data data
      *
      * @return $this
      */
     public function setData($data)
     {
         $this->container['data'] = $data;
-
-        return $this;
-    }
-
-    /**
-     * Gets attributes
-     *
-     * @return \Swagger\Client\Model\PositionAttributes
-     */
-    public function getAttributes()
-    {
-        return $this->container['attributes'];
-    }
-
-    /**
-     * Sets attributes
-     *
-     * @param \Swagger\Client\Model\PositionAttributes $attributes attributes
-     *
-     * @return $this
-     */
-    public function setAttributes($attributes)
-    {
-        $this->container['attributes'] = $attributes;
 
         return $this;
     }
