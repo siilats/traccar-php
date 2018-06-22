@@ -72,7 +72,7 @@ class Server implements ModelInterface, ArrayAccess
         'version' => 'string',
         'force_settings' => 'bool',
         'coordinate_format' => 'string',
-        'attributes' => '\Swagger\Client\Model\ServerAttributes'
+        'attributes' => 'map[string,string]'
     ];
 
     /**
@@ -657,7 +657,7 @@ class Server implements ModelInterface, ArrayAccess
     /**
      * Gets attributes
      *
-     * @return \Swagger\Client\Model\ServerAttributes
+     * @return map[string,string]
      */
     public function getAttributes()
     {
@@ -667,7 +667,7 @@ class Server implements ModelInterface, ArrayAccess
     /**
      * Sets attributes
      *
-     * @param \Swagger\Client\Model\ServerAttributes $attributes attributes
+     * @param map[string,string] $attributes attributes
      *
      * @return $this
      */

@@ -159,21 +159,17 @@ Class | Method | HTTP request | Description
  - [Driver](docs/Model/Driver.md)
  - [Event](docs/Model/Event.md)
  - [Geofence](docs/Model/Geofence.md)
- - [GeofenceAttributes](docs/Model/GeofenceAttributes.md)
  - [Group](docs/Model/Group.md)
  - [Notification](docs/Model/Notification.md)
  - [NotificationType](docs/Model/NotificationType.md)
  - [Permission](docs/Model/Permission.md)
  - [Position](docs/Model/Position.md)
- - [PositionAttributes](docs/Model/PositionAttributes.md)
  - [ReportStops](docs/Model/ReportStops.md)
  - [ReportSummary](docs/Model/ReportSummary.md)
  - [ReportTrips](docs/Model/ReportTrips.md)
  - [Server](docs/Model/Server.md)
- - [ServerAttributes](docs/Model/ServerAttributes.md)
  - [Statistics](docs/Model/Statistics.md)
  - [User](docs/Model/User.md)
- - [UserAttributes](docs/Model/UserAttributes.md)
 
 
 ## Documentation For Authorization

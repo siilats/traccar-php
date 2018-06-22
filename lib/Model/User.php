@@ -76,7 +76,7 @@ class User implements ModelInterface, ArrayAccess
         'device_readonly' => 'bool',
         'limit_commands' => 'bool',
         'token' => 'string',
-        'attributes' => '\Swagger\Client\Model\UserAttributes',
+        'attributes' => 'map[string,string]',
         'phone' => 'string'
     ];
 
@@ -783,7 +783,7 @@ class User implements ModelInterface, ArrayAccess
     /**
      * Gets attributes
      *
-     * @return \Swagger\Client\Model\UserAttributes
+     * @return map[string,string]
      */
     public function getAttributes()
     {
@@ -793,7 +793,7 @@ class User implements ModelInterface, ArrayAccess
     /**
      * Sets attributes
      *
-     * @param \Swagger\Client\Model\UserAttributes $attributes attributes
+     * @param map[string,string] $attributes attributes
      *
      * @return $this
      */

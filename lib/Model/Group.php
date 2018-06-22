@@ -60,7 +60,7 @@ class Group implements ModelInterface, ArrayAccess
         'id' => 'int',
         'name' => 'string',
         'group_id' => 'int',
-        'attributes' => '\Swagger\Client\Model\PositionAttributes'
+        'attributes' => 'map[string,string]'
     ];
 
     /**
@@ -297,7 +297,7 @@ class Group implements ModelInterface, ArrayAccess
     /**
      * Gets attributes
      *
-     * @return \Swagger\Client\Model\PositionAttributes
+     * @return map[string,string]
      */
     public function getAttributes()
     {
@@ -307,7 +307,7 @@ class Group implements ModelInterface, ArrayAccess
     /**
      * Sets attributes
      *
-     * @param \Swagger\Client\Model\PositionAttributes $attributes attributes
+     * @param map[string,string] $attributes attributes
      *
      * @return $this
      */

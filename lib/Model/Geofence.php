@@ -62,7 +62,7 @@ class Geofence implements ModelInterface, ArrayAccess
         'description' => 'string',
         'area' => 'string',
         'calendar_id' => 'int',
-        'attributes' => '\Swagger\Client\Model\GeofenceAttributes'
+        'attributes' => 'map[string,string]'
     ];
 
     /**
@@ -357,7 +357,7 @@ class Geofence implements ModelInterface, ArrayAccess
     /**
      * Gets attributes
      *
-     * @return \Swagger\Client\Model\GeofenceAttributes
+     * @return map[string,string]
      */
     public function getAttributes()
     {
@@ -367,7 +367,7 @@ class Geofence implements ModelInterface, ArrayAccess
     /**
      * Sets attributes
      *
-     * @param \Swagger\Client\Model\GeofenceAttributes $attributes attributes
+     * @param map[string,string] $attributes attributes
      *
      * @return $this
      */

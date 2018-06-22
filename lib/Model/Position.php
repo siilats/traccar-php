@@ -74,7 +74,7 @@ class Position implements ModelInterface, ArrayAccess
         'accuracy' => 'float',
         'network' => 'string',
         'additional_properties' => 'string',
-        'attributes' => '\Swagger\Client\Model\PositionAttributes'
+        'attributes' => 'map[string,string]'
     ];
 
     /**
@@ -717,7 +717,7 @@ class Position implements ModelInterface, ArrayAccess
     /**
      * Gets attributes
      *
-     * @return \Swagger\Client\Model\PositionAttributes
+     * @return map[string,string]
      */
     public function getAttributes()
     {
@@ -727,7 +727,7 @@ class Position implements ModelInterface, ArrayAccess
     /**
      * Sets attributes
      *
-     * @param \Swagger\Client\Model\PositionAttributes $attributes attributes
+     * @param map[string,string] $attributes attributes
      *
      * @return $this
      */

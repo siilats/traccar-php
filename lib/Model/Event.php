@@ -63,7 +63,7 @@ class Event implements ModelInterface, ArrayAccess
         'device_id' => 'int',
         'position_id' => 'int',
         'geofence_id' => 'int',
-        'attributes' => '\Swagger\Client\Model\PositionAttributes'
+        'attributes' => 'map[string,string]'
     ];
 
     /**
@@ -387,7 +387,7 @@ class Event implements ModelInterface, ArrayAccess
     /**
      * Gets attributes
      *
-     * @return \Swagger\Client\Model\PositionAttributes
+     * @return map[string,string]
      */
     public function getAttributes()
     {
@@ -397,7 +397,7 @@ class Event implements ModelInterface, ArrayAccess
     /**
      * Sets attributes
      *
-     * @param \Swagger\Client\Model\PositionAttributes $attributes attributes
+     * @param map[string,string] $attributes attributes
      *
      * @return $this
      */

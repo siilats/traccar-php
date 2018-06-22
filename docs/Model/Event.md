@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **device_id** | **int** |  | [optional] 
 **position_id** | **int** |  | [optional] 
 **geofence_id** | **int** |  | [optional] 
-**attributes** | [**\Swagger\Client\Model\PositionAttributes**](PositionAttributes.md) |  | [optional] 
+**attributes** | **map[string,string]** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

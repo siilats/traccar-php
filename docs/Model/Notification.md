@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **web** | **bool** |  | [optional] 
 **mail** | **bool** |  | [optional] 
 **sms** | **bool** |  | [optional] 
-**attributes** | [**\Swagger\Client\Model\PositionAttributes**](PositionAttributes.md) |  | [optional] 
+**attributes** | **map[string,string]** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
