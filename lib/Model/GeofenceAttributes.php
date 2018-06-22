@@ -1,6 +1,6 @@
 <?php
 /**
- * Geofence
+ * GeofenceAttributes
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \Swagger\Client\ObjectSerializer;
 
 /**
- * Geofence Class Doc Comment
+ * GeofenceAttributes Class Doc Comment
  *
  * @category Class
  * @package  Swagger\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class Geofence implements ModelInterface, ArrayAccess
+class GeofenceAttributes implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class Geofence implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'Geofence';
+    protected static $swaggerModelName = 'Geofence_attributes';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,12 +57,9 @@ class Geofence implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'id' => 'int',
-        'name' => 'string',
-        'description' => 'string',
-        'area' => 'string',
-        'calendar_id' => 'int',
-        'attributes' => '\Swagger\Client\Model\GeofenceAttributes'
+        'initial_pay_amount' => 'string',
+        'price_min_rate' => 'string',
+        'total_price' => 'string'
     ];
 
     /**
@@ -71,12 +68,9 @@ class Geofence implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'id' => null,
-        'name' => null,
-        'description' => null,
-        'area' => null,
-        'calendar_id' => null,
-        'attributes' => null
+        'initial_pay_amount' => null,
+        'price_min_rate' => null,
+        'total_price' => null
     ];
 
     /**
@@ -106,12 +100,9 @@ class Geofence implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'id' => 'id',
-        'name' => 'name',
-        'description' => 'description',
-        'area' => 'area',
-        'calendar_id' => 'calendarId',
-        'attributes' => 'attributes'
+        'initial_pay_amount' => 'initialPayAmount',
+        'price_min_rate' => 'priceMinRate',
+        'total_price' => 'totalPrice'
     ];
 
     /**
@@ -120,12 +111,9 @@ class Geofence implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'id' => 'setId',
-        'name' => 'setName',
-        'description' => 'setDescription',
-        'area' => 'setArea',
-        'calendar_id' => 'setCalendarId',
-        'attributes' => 'setAttributes'
+        'initial_pay_amount' => 'setInitialPayAmount',
+        'price_min_rate' => 'setPriceMinRate',
+        'total_price' => 'setTotalPrice'
     ];
 
     /**
@@ -134,12 +122,9 @@ class Geofence implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'id' => 'getId',
-        'name' => 'getName',
-        'description' => 'getDescription',
-        'area' => 'getArea',
-        'calendar_id' => 'getCalendarId',
-        'attributes' => 'getAttributes'
+        'initial_pay_amount' => 'getInitialPayAmount',
+        'price_min_rate' => 'getPriceMinRate',
+        'total_price' => 'getTotalPrice'
     ];
 
     /**
@@ -202,12 +187,9 @@ class Geofence implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
-        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
-        $this->container['description'] = isset($data['description']) ? $data['description'] : null;
-        $this->container['area'] = isset($data['area']) ? $data['area'] : null;
-        $this->container['calendar_id'] = isset($data['calendar_id']) ? $data['calendar_id'] : null;
-        $this->container['attributes'] = isset($data['attributes']) ? $data['attributes'] : null;
+        $this->container['initial_pay_amount'] = isset($data['initial_pay_amount']) ? $data['initial_pay_amount'] : null;
+        $this->container['price_min_rate'] = isset($data['price_min_rate']) ? $data['price_min_rate'] : null;
+        $this->container['total_price'] = isset($data['total_price']) ? $data['total_price'] : null;
     }
 
     /**
@@ -235,145 +217,73 @@ class Geofence implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets id
-     *
-     * @return int
-     */
-    public function getId()
-    {
-        return $this->container['id'];
-    }
-
-    /**
-     * Sets id
-     *
-     * @param int $id id
-     *
-     * @return $this
-     */
-    public function setId($id)
-    {
-        $this->container['id'] = $id;
-
-        return $this;
-    }
-
-    /**
-     * Gets name
+     * Gets initial_pay_amount
      *
      * @return string
      */
-    public function getName()
+    public function getInitialPayAmount()
     {
-        return $this->container['name'];
+        return $this->container['initial_pay_amount'];
     }
 
     /**
-     * Sets name
+     * Sets initial_pay_amount
      *
-     * @param string $name name
+     * @param string $initial_pay_amount initial_pay_amount
      *
      * @return $this
      */
-    public function setName($name)
+    public function setInitialPayAmount($initial_pay_amount)
     {
-        $this->container['name'] = $name;
+        $this->container['initial_pay_amount'] = $initial_pay_amount;
 
         return $this;
     }
 
     /**
-     * Gets description
+     * Gets price_min_rate
      *
      * @return string
      */
-    public function getDescription()
+    public function getPriceMinRate()
     {
-        return $this->container['description'];
+        return $this->container['price_min_rate'];
     }
 
     /**
-     * Sets description
+     * Sets price_min_rate
      *
-     * @param string $description description
+     * @param string $price_min_rate price_min_rate
      *
      * @return $this
      */
-    public function setDescription($description)
+    public function setPriceMinRate($price_min_rate)
     {
-        $this->container['description'] = $description;
+        $this->container['price_min_rate'] = $price_min_rate;
 
         return $this;
     }
 
     /**
-     * Gets area
+     * Gets total_price
      *
      * @return string
      */
-    public function getArea()
+    public function getTotalPrice()
     {
-        return $this->container['area'];
+        return $this->container['total_price'];
     }
 
     /**
-     * Sets area
+     * Sets total_price
      *
-     * @param string $area area
+     * @param string $total_price total_price
      *
      * @return $this
      */
-    public function setArea($area)
+    public function setTotalPrice($total_price)
     {
-        $this->container['area'] = $area;
-
-        return $this;
-    }
-
-    /**
-     * Gets calendar_id
-     *
-     * @return int
-     */
-    public function getCalendarId()
-    {
-        return $this->container['calendar_id'];
-    }
-
-    /**
-     * Sets calendar_id
-     *
-     * @param int $calendar_id calendar_id
-     *
-     * @return $this
-     */
-    public function setCalendarId($calendar_id)
-    {
-        $this->container['calendar_id'] = $calendar_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets attributes
-     *
-     * @return \Swagger\Client\Model\GeofenceAttributes
-     */
-    public function getAttributes()
-    {
-        return $this->container['attributes'];
-    }
-
-    /**
-     * Sets attributes
-     *
-     * @param \Swagger\Client\Model\GeofenceAttributes $attributes attributes
-     *
-     * @return $this
-     */
-    public function setAttributes($attributes)
-    {
-        $this->container['attributes'] = $attributes;
+        $this->container['total_price'] = $total_price;
 
         return $this;
     }

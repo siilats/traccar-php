@@ -72,7 +72,7 @@ class Server implements ModelInterface, ArrayAccess
         'version' => 'string',
         'force_settings' => 'bool',
         'coordinate_format' => 'string',
-        'attributes' => '\Swagger\Client\Model\PositionAttributes'
+        'attributes' => '\Swagger\Client\Model\ServerAttributes'
     ];
 
     /**
@@ -657,7 +657,7 @@ class Server implements ModelInterface, ArrayAccess
     /**
      * Gets attributes
      *
-     * @return \Swagger\Client\Model\PositionAttributes
+     * @return \Swagger\Client\Model\ServerAttributes
      */
     public function getAttributes()
     {
@@ -667,7 +667,7 @@ class Server implements ModelInterface, ArrayAccess
     /**
      * Sets attributes
      *
-     * @param \Swagger\Client\Model\PositionAttributes $attributes attributes
+     * @param \Swagger\Client\Model\ServerAttributes $attributes attributes
      *
      * @return $this
      */

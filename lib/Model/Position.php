@@ -73,6 +73,7 @@ class Position implements ModelInterface, ArrayAccess
         'address' => 'string',
         'accuracy' => 'float',
         'network' => 'string',
+        'additional_properties' => 'string',
         'attributes' => '\Swagger\Client\Model\PositionAttributes'
     ];
 
@@ -98,6 +99,7 @@ class Position implements ModelInterface, ArrayAccess
         'address' => null,
         'accuracy' => null,
         'network' => null,
+        'additional_properties' => null,
         'attributes' => null
     ];
 
@@ -144,6 +146,7 @@ class Position implements ModelInterface, ArrayAccess
         'address' => 'address',
         'accuracy' => 'accuracy',
         'network' => 'network',
+        'additional_properties' => 'additionalProperties',
         'attributes' => 'attributes'
     ];
 
@@ -169,6 +172,7 @@ class Position implements ModelInterface, ArrayAccess
         'address' => 'setAddress',
         'accuracy' => 'setAccuracy',
         'network' => 'setNetwork',
+        'additional_properties' => 'setAdditionalProperties',
         'attributes' => 'setAttributes'
     ];
 
@@ -194,6 +198,7 @@ class Position implements ModelInterface, ArrayAccess
         'address' => 'getAddress',
         'accuracy' => 'getAccuracy',
         'network' => 'getNetwork',
+        'additional_properties' => 'getAdditionalProperties',
         'attributes' => 'getAttributes'
     ];
 
@@ -273,6 +278,7 @@ class Position implements ModelInterface, ArrayAccess
         $this->container['address'] = isset($data['address']) ? $data['address'] : null;
         $this->container['accuracy'] = isset($data['accuracy']) ? $data['accuracy'] : null;
         $this->container['network'] = isset($data['network']) ? $data['network'] : null;
+        $this->container['additional_properties'] = isset($data['additional_properties']) ? $data['additional_properties'] : null;
         $this->container['attributes'] = isset($data['attributes']) ? $data['attributes'] : null;
     }
 
@@ -680,6 +686,30 @@ class Position implements ModelInterface, ArrayAccess
     public function setNetwork($network)
     {
         $this->container['network'] = $network;
+
+        return $this;
+    }
+
+    /**
+     * Gets additional_properties
+     *
+     * @return string
+     */
+    public function getAdditionalProperties()
+    {
+        return $this->container['additional_properties'];
+    }
+
+    /**
+     * Sets additional_properties
+     *
+     * @param string $additional_properties additional_properties
+     *
+     * @return $this
+     */
+    public function setAdditionalProperties($additional_properties)
+    {
+        $this->container['additional_properties'] = $additional_properties;
 
         return $this;
     }

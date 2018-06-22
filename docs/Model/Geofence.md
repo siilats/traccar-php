@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **description** | **string** |  | [optional] 
 **area** | **string** |  | [optional] 
 **calendar_id** | **int** |  | [optional] 
-**attributes** | [**\Swagger\Client\Model\PositionAttributes**](PositionAttributes.md) |  | [optional] 
+**attributes** | [**\Swagger\Client\Model\GeofenceAttributes**](GeofenceAttributes.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

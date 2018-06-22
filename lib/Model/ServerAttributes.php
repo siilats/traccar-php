@@ -1,6 +1,6 @@
 <?php
 /**
- * Geofence
+ * ServerAttributes
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \Swagger\Client\ObjectSerializer;
 
 /**
- * Geofence Class Doc Comment
+ * ServerAttributes Class Doc Comment
  *
  * @category Class
  * @package  Swagger\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class Geofence implements ModelInterface, ArrayAccess
+class ServerAttributes implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class Geofence implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'Geofence';
+    protected static $swaggerModelName = 'Server_attributes';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,12 +57,15 @@ class Geofence implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'id' => 'int',
-        'name' => 'string',
-        'description' => 'string',
-        'area' => 'string',
-        'calendar_id' => 'int',
-        'attributes' => '\Swagger\Client\Model\GeofenceAttributes'
+        'stripepk' => 'string',
+        'stripepklive' => 'string',
+        'stripeurllocalhost' => 'string',
+        'tracurl' => 'string',
+        'tractoken' => 'string',
+        'tracapi' => 'string',
+        'stripeurl' => 'string',
+        'apple_merchant_id' => 'string',
+        'b_enable_mockup_gps' => 'string'
     ];
 
     /**
@@ -71,12 +74,15 @@ class Geofence implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'id' => null,
-        'name' => null,
-        'description' => null,
-        'area' => null,
-        'calendar_id' => null,
-        'attributes' => null
+        'stripepk' => null,
+        'stripepklive' => null,
+        'stripeurllocalhost' => null,
+        'tracurl' => null,
+        'tractoken' => null,
+        'tracapi' => null,
+        'stripeurl' => null,
+        'apple_merchant_id' => null,
+        'b_enable_mockup_gps' => null
     ];
 
     /**
@@ -106,12 +112,15 @@ class Geofence implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'id' => 'id',
-        'name' => 'name',
-        'description' => 'description',
-        'area' => 'area',
-        'calendar_id' => 'calendarId',
-        'attributes' => 'attributes'
+        'stripepk' => 'stripepk',
+        'stripepklive' => 'stripepklive',
+        'stripeurllocalhost' => 'stripeurllocalhost',
+        'tracurl' => 'tracurl',
+        'tractoken' => 'tractoken',
+        'tracapi' => 'tracapi',
+        'stripeurl' => 'stripeurl',
+        'apple_merchant_id' => 'appleMerchantID',
+        'b_enable_mockup_gps' => 'bEnableMockupGPS'
     ];
 
     /**
@@ -120,12 +129,15 @@ class Geofence implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'id' => 'setId',
-        'name' => 'setName',
-        'description' => 'setDescription',
-        'area' => 'setArea',
-        'calendar_id' => 'setCalendarId',
-        'attributes' => 'setAttributes'
+        'stripepk' => 'setStripepk',
+        'stripepklive' => 'setStripepklive',
+        'stripeurllocalhost' => 'setStripeurllocalhost',
+        'tracurl' => 'setTracurl',
+        'tractoken' => 'setTractoken',
+        'tracapi' => 'setTracapi',
+        'stripeurl' => 'setStripeurl',
+        'apple_merchant_id' => 'setAppleMerchantId',
+        'b_enable_mockup_gps' => 'setBEnableMockupGps'
     ];
 
     /**
@@ -134,12 +146,15 @@ class Geofence implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'id' => 'getId',
-        'name' => 'getName',
-        'description' => 'getDescription',
-        'area' => 'getArea',
-        'calendar_id' => 'getCalendarId',
-        'attributes' => 'getAttributes'
+        'stripepk' => 'getStripepk',
+        'stripepklive' => 'getStripepklive',
+        'stripeurllocalhost' => 'getStripeurllocalhost',
+        'tracurl' => 'getTracurl',
+        'tractoken' => 'getTractoken',
+        'tracapi' => 'getTracapi',
+        'stripeurl' => 'getStripeurl',
+        'apple_merchant_id' => 'getAppleMerchantId',
+        'b_enable_mockup_gps' => 'getBEnableMockupGps'
     ];
 
     /**
@@ -202,12 +217,15 @@ class Geofence implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
-        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
-        $this->container['description'] = isset($data['description']) ? $data['description'] : null;
-        $this->container['area'] = isset($data['area']) ? $data['area'] : null;
-        $this->container['calendar_id'] = isset($data['calendar_id']) ? $data['calendar_id'] : null;
-        $this->container['attributes'] = isset($data['attributes']) ? $data['attributes'] : null;
+        $this->container['stripepk'] = isset($data['stripepk']) ? $data['stripepk'] : null;
+        $this->container['stripepklive'] = isset($data['stripepklive']) ? $data['stripepklive'] : null;
+        $this->container['stripeurllocalhost'] = isset($data['stripeurllocalhost']) ? $data['stripeurllocalhost'] : null;
+        $this->container['tracurl'] = isset($data['tracurl']) ? $data['tracurl'] : null;
+        $this->container['tractoken'] = isset($data['tractoken']) ? $data['tractoken'] : null;
+        $this->container['tracapi'] = isset($data['tracapi']) ? $data['tracapi'] : null;
+        $this->container['stripeurl'] = isset($data['stripeurl']) ? $data['stripeurl'] : null;
+        $this->container['apple_merchant_id'] = isset($data['apple_merchant_id']) ? $data['apple_merchant_id'] : null;
+        $this->container['b_enable_mockup_gps'] = isset($data['b_enable_mockup_gps']) ? $data['b_enable_mockup_gps'] : null;
     }
 
     /**
@@ -235,145 +253,217 @@ class Geofence implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets id
-     *
-     * @return int
-     */
-    public function getId()
-    {
-        return $this->container['id'];
-    }
-
-    /**
-     * Sets id
-     *
-     * @param int $id id
-     *
-     * @return $this
-     */
-    public function setId($id)
-    {
-        $this->container['id'] = $id;
-
-        return $this;
-    }
-
-    /**
-     * Gets name
+     * Gets stripepk
      *
      * @return string
      */
-    public function getName()
+    public function getStripepk()
     {
-        return $this->container['name'];
+        return $this->container['stripepk'];
     }
 
     /**
-     * Sets name
+     * Sets stripepk
      *
-     * @param string $name name
+     * @param string $stripepk stripepk
      *
      * @return $this
      */
-    public function setName($name)
+    public function setStripepk($stripepk)
     {
-        $this->container['name'] = $name;
+        $this->container['stripepk'] = $stripepk;
 
         return $this;
     }
 
     /**
-     * Gets description
+     * Gets stripepklive
      *
      * @return string
      */
-    public function getDescription()
+    public function getStripepklive()
     {
-        return $this->container['description'];
+        return $this->container['stripepklive'];
     }
 
     /**
-     * Sets description
+     * Sets stripepklive
      *
-     * @param string $description description
+     * @param string $stripepklive stripepklive
      *
      * @return $this
      */
-    public function setDescription($description)
+    public function setStripepklive($stripepklive)
     {
-        $this->container['description'] = $description;
+        $this->container['stripepklive'] = $stripepklive;
 
         return $this;
     }
 
     /**
-     * Gets area
+     * Gets stripeurllocalhost
      *
      * @return string
      */
-    public function getArea()
+    public function getStripeurllocalhost()
     {
-        return $this->container['area'];
+        return $this->container['stripeurllocalhost'];
     }
 
     /**
-     * Sets area
+     * Sets stripeurllocalhost
      *
-     * @param string $area area
+     * @param string $stripeurllocalhost stripeurllocalhost
      *
      * @return $this
      */
-    public function setArea($area)
+    public function setStripeurllocalhost($stripeurllocalhost)
     {
-        $this->container['area'] = $area;
+        $this->container['stripeurllocalhost'] = $stripeurllocalhost;
 
         return $this;
     }
 
     /**
-     * Gets calendar_id
+     * Gets tracurl
      *
-     * @return int
+     * @return string
      */
-    public function getCalendarId()
+    public function getTracurl()
     {
-        return $this->container['calendar_id'];
+        return $this->container['tracurl'];
     }
 
     /**
-     * Sets calendar_id
+     * Sets tracurl
      *
-     * @param int $calendar_id calendar_id
+     * @param string $tracurl tracurl
      *
      * @return $this
      */
-    public function setCalendarId($calendar_id)
+    public function setTracurl($tracurl)
     {
-        $this->container['calendar_id'] = $calendar_id;
+        $this->container['tracurl'] = $tracurl;
 
         return $this;
     }
 
     /**
-     * Gets attributes
+     * Gets tractoken
      *
-     * @return \Swagger\Client\Model\GeofenceAttributes
+     * @return string
      */
-    public function getAttributes()
+    public function getTractoken()
     {
-        return $this->container['attributes'];
+        return $this->container['tractoken'];
     }
 
     /**
-     * Sets attributes
+     * Sets tractoken
      *
-     * @param \Swagger\Client\Model\GeofenceAttributes $attributes attributes
+     * @param string $tractoken tractoken
      *
      * @return $this
      */
-    public function setAttributes($attributes)
+    public function setTractoken($tractoken)
     {
-        $this->container['attributes'] = $attributes;
+        $this->container['tractoken'] = $tractoken;
+
+        return $this;
+    }
+
+    /**
+     * Gets tracapi
+     *
+     * @return string
+     */
+    public function getTracapi()
+    {
+        return $this->container['tracapi'];
+    }
+
+    /**
+     * Sets tracapi
+     *
+     * @param string $tracapi tracapi
+     *
+     * @return $this
+     */
+    public function setTracapi($tracapi)
+    {
+        $this->container['tracapi'] = $tracapi;
+
+        return $this;
+    }
+
+    /**
+     * Gets stripeurl
+     *
+     * @return string
+     */
+    public function getStripeurl()
+    {
+        return $this->container['stripeurl'];
+    }
+
+    /**
+     * Sets stripeurl
+     *
+     * @param string $stripeurl stripeurl
+     *
+     * @return $this
+     */
+    public function setStripeurl($stripeurl)
+    {
+        $this->container['stripeurl'] = $stripeurl;
+
+        return $this;
+    }
+
+    /**
+     * Gets apple_merchant_id
+     *
+     * @return string
+     */
+    public function getAppleMerchantId()
+    {
+        return $this->container['apple_merchant_id'];
+    }
+
+    /**
+     * Sets apple_merchant_id
+     *
+     * @param string $apple_merchant_id apple_merchant_id
+     *
+     * @return $this
+     */
+    public function setAppleMerchantId($apple_merchant_id)
+    {
+        $this->container['apple_merchant_id'] = $apple_merchant_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets b_enable_mockup_gps
+     *
+     * @return string
+     */
+    public function getBEnableMockupGps()
+    {
+        return $this->container['b_enable_mockup_gps'];
+    }
+
+    /**
+     * Sets b_enable_mockup_gps
+     *
+     * @param string $b_enable_mockup_gps b_enable_mockup_gps
+     *
+     * @return $this
+     */
+    public function setBEnableMockupGps($b_enable_mockup_gps)
+    {
+        $this->container['b_enable_mockup_gps'] = $b_enable_mockup_gps;
 
         return $this;
     }
