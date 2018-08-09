@@ -55,6 +55,7 @@ Method | HTTP request | Description
 [**serverPut**](DefaultApi.md#serverPut) | **PUT** /server | Update Server information
 [**sessionDelete**](DefaultApi.md#sessionDelete) | **DELETE** /session | Close the Session
 [**sessionGet**](DefaultApi.md#sessionGet) | **GET** /session | Fetch Session information
+[**sessionLoginGet**](DefaultApi.md#sessionLoginGet) | **GET** /session/login | Use admin token to log in a user without traccartoken. This deletes the anonymous user that has the token and puts the token into the user w email
 [**sessionPost**](DefaultApi.md#sessionPost) | **POST** /session | Create a new Session
 [**statisticsGet**](DefaultApi.md#statisticsGet) | **GET** /statistics | Fetch server Statistics
 [**usersGet**](DefaultApi.md#usersGet) | **GET** /users | Fetch a list of Users
@@ -2913,6 +2914,66 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **token** | **string**|  | [optional]
+
+### Return type
+
+[**\Swagger\Client\Model\User**](../Model/User.md)
+
+### Authorization
+
+[basicAuth](../../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/x-www-form-urlencoded
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **sessionLoginGet**
+> \Swagger\Client\Model\User sessionLoginGet($admintoken, $anontoken, $email, $password)
+
+Use admin token to log in a user without traccartoken. This deletes the anonymous user that has the token and puts the token into the user w email
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+// Configure HTTP basic authorization: basicAuth
+$config = Swagger\Client\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
+
+
+$apiInstance = new Swagger\Client\Api\DefaultApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$admintoken = "admintoken_example"; // string | 
+$anontoken = "anontoken_example"; // string | 
+$email = "email_example"; // string | 
+$password = "password_example"; // string | 
+
+try {
+    $result = $apiInstance->sessionLoginGet($admintoken, $anontoken, $email, $password);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->sessionLoginGet: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **admintoken** | **string**|  | [optional]
+ **anontoken** | **string**|  | [optional]
+ **email** | **string**|  | [optional]
+ **password** | **string**|  | [optional]
 
 ### Return type
 
