@@ -2931,7 +2931,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **sessionLoginGet**
-> \Swagger\Client\Model\User sessionLoginGet($admintoken, $anontoken, $email, $password)
+> \Swagger\Client\Model\User sessionLoginGet($anontoken, $adminemail, $adminpassword, $email, $password)
 
 Use admin token to log in a user without traccartoken. This deletes the anonymous user that has the token and puts the token into the user w email
 
@@ -2952,13 +2952,14 @@ $apiInstance = new Swagger\Client\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
-$admintoken = "admintoken_example"; // string | 
 $anontoken = "anontoken_example"; // string | 
+$adminemail = "adminemail_example"; // string | 
+$adminpassword = "adminpassword_example"; // string | 
 $email = "email_example"; // string | 
 $password = "password_example"; // string | 
 
 try {
-    $result = $apiInstance->sessionLoginGet($admintoken, $anontoken, $email, $password);
+    $result = $apiInstance->sessionLoginGet($anontoken, $adminemail, $adminpassword, $email, $password);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->sessionLoginGet: ', $e->getMessage(), PHP_EOL;
@@ -2970,8 +2971,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **admintoken** | **string**|  | [optional]
  **anontoken** | **string**|  | [optional]
+ **adminemail** | **string**|  | [optional]
+ **adminpassword** | **string**|  | [optional]
  **email** | **string**|  | [optional]
  **password** | **string**|  | [optional]
 

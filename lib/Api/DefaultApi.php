@@ -13536,8 +13536,9 @@ class DefaultApi
      *
      * Use admin token to log in a user without traccartoken. This deletes the anonymous user that has the token and puts the token into the user w email
      *
-     * @param  string $admintoken admintoken (optional)
      * @param  string $anontoken anontoken (optional)
+     * @param  string $adminemail adminemail (optional)
+     * @param  string $adminpassword adminpassword (optional)
      * @param  string $email email (optional)
      * @param  string $password password (optional)
      *
@@ -13545,9 +13546,9 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return \Swagger\Client\Model\User
      */
-    public function sessionLoginGet($admintoken = null, $anontoken = null, $email = null, $password = null)
+    public function sessionLoginGet($anontoken = null, $adminemail = null, $adminpassword = null, $email = null, $password = null)
     {
-        list($response) = $this->sessionLoginGetWithHttpInfo($admintoken, $anontoken, $email, $password);
+        list($response) = $this->sessionLoginGetWithHttpInfo($anontoken, $adminemail, $adminpassword, $email, $password);
         return $response;
     }
 
@@ -13556,8 +13557,9 @@ class DefaultApi
      *
      * Use admin token to log in a user without traccartoken. This deletes the anonymous user that has the token and puts the token into the user w email
      *
-     * @param  string $admintoken (optional)
      * @param  string $anontoken (optional)
+     * @param  string $adminemail (optional)
+     * @param  string $adminpassword (optional)
      * @param  string $email (optional)
      * @param  string $password (optional)
      *
@@ -13565,10 +13567,10 @@ class DefaultApi
      * @throws \InvalidArgumentException
      * @return array of \Swagger\Client\Model\User, HTTP status code, HTTP response headers (array of strings)
      */
-    public function sessionLoginGetWithHttpInfo($admintoken = null, $anontoken = null, $email = null, $password = null)
+    public function sessionLoginGetWithHttpInfo($anontoken = null, $adminemail = null, $adminpassword = null, $email = null, $password = null)
     {
         $returnType = '\Swagger\Client\Model\User';
-        $request = $this->sessionLoginGetRequest($admintoken, $anontoken, $email, $password);
+        $request = $this->sessionLoginGetRequest($anontoken, $adminemail, $adminpassword, $email, $password);
 
         try {
             $options = $this->createHttpClientOption();
@@ -13634,17 +13636,18 @@ class DefaultApi
      *
      * Use admin token to log in a user without traccartoken. This deletes the anonymous user that has the token and puts the token into the user w email
      *
-     * @param  string $admintoken (optional)
      * @param  string $anontoken (optional)
+     * @param  string $adminemail (optional)
+     * @param  string $adminpassword (optional)
      * @param  string $email (optional)
      * @param  string $password (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function sessionLoginGetAsync($admintoken = null, $anontoken = null, $email = null, $password = null)
+    public function sessionLoginGetAsync($anontoken = null, $adminemail = null, $adminpassword = null, $email = null, $password = null)
     {
-        return $this->sessionLoginGetAsyncWithHttpInfo($admintoken, $anontoken, $email, $password)
+        return $this->sessionLoginGetAsyncWithHttpInfo($anontoken, $adminemail, $adminpassword, $email, $password)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -13657,18 +13660,19 @@ class DefaultApi
      *
      * Use admin token to log in a user without traccartoken. This deletes the anonymous user that has the token and puts the token into the user w email
      *
-     * @param  string $admintoken (optional)
      * @param  string $anontoken (optional)
+     * @param  string $adminemail (optional)
+     * @param  string $adminpassword (optional)
      * @param  string $email (optional)
      * @param  string $password (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function sessionLoginGetAsyncWithHttpInfo($admintoken = null, $anontoken = null, $email = null, $password = null)
+    public function sessionLoginGetAsyncWithHttpInfo($anontoken = null, $adminemail = null, $adminpassword = null, $email = null, $password = null)
     {
         $returnType = '\Swagger\Client\Model\User';
-        $request = $this->sessionLoginGetRequest($admintoken, $anontoken, $email, $password);
+        $request = $this->sessionLoginGetRequest($anontoken, $adminemail, $adminpassword, $email, $password);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -13710,15 +13714,16 @@ class DefaultApi
     /**
      * Create request for operation 'sessionLoginGet'
      *
-     * @param  string $admintoken (optional)
      * @param  string $anontoken (optional)
+     * @param  string $adminemail (optional)
+     * @param  string $adminpassword (optional)
      * @param  string $email (optional)
      * @param  string $password (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function sessionLoginGetRequest($admintoken = null, $anontoken = null, $email = null, $password = null)
+    protected function sessionLoginGetRequest($anontoken = null, $adminemail = null, $adminpassword = null, $email = null, $password = null)
     {
 
         $resourcePath = '/session/login';
@@ -13729,12 +13734,16 @@ class DefaultApi
         $multipart = false;
 
         // query params
-        if ($admintoken !== null) {
-            $queryParams['admintoken'] = ObjectSerializer::toQueryValue($admintoken);
-        }
-        // query params
         if ($anontoken !== null) {
             $queryParams['anontoken'] = ObjectSerializer::toQueryValue($anontoken);
+        }
+        // query params
+        if ($adminemail !== null) {
+            $queryParams['adminemail'] = ObjectSerializer::toQueryValue($adminemail);
+        }
+        // query params
+        if ($adminpassword !== null) {
+            $queryParams['adminpassword'] = ObjectSerializer::toQueryValue($adminpassword);
         }
         // query params
         if ($email !== null) {
