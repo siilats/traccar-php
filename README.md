@@ -140,7 +140,8 @@ Class | Method | HTTP request | Description
 *DefaultApi* | [**serverPut**](docs/Api/DefaultApi.md#serverput) | **PUT** /server | Update Server information
 *DefaultApi* | [**sessionDelete**](docs/Api/DefaultApi.md#sessiondelete) | **DELETE** /session | Close the Session
 *DefaultApi* | [**sessionGet**](docs/Api/DefaultApi.md#sessionget) | **GET** /session | Fetch Session information
-*DefaultApi* | [**sessionLoginGet**](docs/Api/DefaultApi.md#sessionloginget) | **GET** /session/login | Use admin token to log in a user without traccartoken. This deletes the anonymous user that has the token and puts the token into the user w email
+*DefaultApi* | [**sessionLoginPost**](docs/Api/DefaultApi.md#sessionloginpost) | **POST** /session/login | Use admin token to log in a user without traccartoken. This deletes the anonymous user that has the token and puts the token into the user w email
+*DefaultApi* | [**sessionLogoutPost**](docs/Api/DefaultApi.md#sessionlogoutpost) | **POST** /session/logout | Use admin token to log out a user by renaming his  traccartoken.
 *DefaultApi* | [**sessionPost**](docs/Api/DefaultApi.md#sessionpost) | **POST** /session | Create a new Session
 *DefaultApi* | [**statisticsGet**](docs/Api/DefaultApi.md#statisticsget) | **GET** /statistics | Fetch server Statistics
 *DefaultApi* | [**usersGet**](docs/Api/DefaultApi.md#usersget) | **GET** /users | Fetch a list of Users

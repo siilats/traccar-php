@@ -55,7 +55,8 @@ Method | HTTP request | Description
 [**serverPut**](DefaultApi.md#serverPut) | **PUT** /server | Update Server information
 [**sessionDelete**](DefaultApi.md#sessionDelete) | **DELETE** /session | Close the Session
 [**sessionGet**](DefaultApi.md#sessionGet) | **GET** /session | Fetch Session information
-[**sessionLoginGet**](DefaultApi.md#sessionLoginGet) | **GET** /session/login | Use admin token to log in a user without traccartoken. This deletes the anonymous user that has the token and puts the token into the user w email
+[**sessionLoginPost**](DefaultApi.md#sessionLoginPost) | **POST** /session/login | Use admin token to log in a user without traccartoken. This deletes the anonymous user that has the token and puts the token into the user w email
+[**sessionLogoutPost**](DefaultApi.md#sessionLogoutPost) | **POST** /session/logout | Use admin token to log out a user by renaming his  traccartoken.
 [**sessionPost**](DefaultApi.md#sessionPost) | **POST** /session | Create a new Session
 [**statisticsGet**](DefaultApi.md#statisticsGet) | **GET** /statistics | Fetch server Statistics
 [**usersGet**](DefaultApi.md#usersGet) | **GET** /users | Fetch a list of Users
@@ -2930,8 +2931,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **sessionLoginGet**
-> \Swagger\Client\Model\User sessionLoginGet($anontoken, $adminemail, $adminpassword, $email, $password)
+# **sessionLoginPost**
+> \Swagger\Client\Model\User sessionLoginPost($anontoken, $adminemail, $adminpassword, $email, $password)
 
 Use admin token to log in a user without traccartoken. This deletes the anonymous user that has the token and puts the token into the user w email
 
@@ -2959,10 +2960,10 @@ $email = "email_example"; // string |
 $password = "password_example"; // string | 
 
 try {
-    $result = $apiInstance->sessionLoginGet($anontoken, $adminemail, $adminpassword, $email, $password);
+    $result = $apiInstance->sessionLoginPost($anontoken, $adminemail, $adminpassword, $email, $password);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling DefaultApi->sessionLoginGet: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling DefaultApi->sessionLoginPost: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -2976,6 +2977,64 @@ Name | Type | Description  | Notes
  **adminpassword** | **string**|  | [optional]
  **email** | **string**|  | [optional]
  **password** | **string**|  | [optional]
+
+### Return type
+
+[**\Swagger\Client\Model\User**](../Model/User.md)
+
+### Authorization
+
+[basicAuth](../../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/x-www-form-urlencoded
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **sessionLogoutPost**
+> \Swagger\Client\Model\User sessionLogoutPost($anontoken, $adminemail, $adminpassword)
+
+Use admin token to log out a user by renaming his  traccartoken.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+// Configure HTTP basic authorization: basicAuth
+$config = Swagger\Client\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
+
+
+$apiInstance = new Swagger\Client\Api\DefaultApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$anontoken = "anontoken_example"; // string | 
+$adminemail = "adminemail_example"; // string | 
+$adminpassword = "adminpassword_example"; // string | 
+
+try {
+    $result = $apiInstance->sessionLogoutPost($anontoken, $adminemail, $adminpassword);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->sessionLogoutPost: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **anontoken** | **string**|  | [optional]
+ **adminemail** | **string**|  | [optional]
+ **adminpassword** | **string**|  | [optional]
 
 ### Return type
 
