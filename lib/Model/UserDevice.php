@@ -1,6 +1,6 @@
 <?php
 /**
- * CommandType
+ * UserDevice
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \Swagger\Client\ObjectSerializer;
 
 /**
- * CommandType Class Doc Comment
+ * UserDevice Class Doc Comment
  *
  * @category Class
  * @package  Swagger\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class CommandType implements ModelInterface, ArrayAccess
+class UserDevice implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class CommandType implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'CommandType';
+    protected static $swaggerModelName = 'UserDevice';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,7 +57,9 @@ class CommandType implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'type' => 'string'
+        'user' => '\Swagger\Client\Model\User',
+        'device' => '\Swagger\Client\Model\Device',
+        'geofence' => '\Swagger\Client\Model\Geofence'
     ];
 
     /**
@@ -66,7 +68,9 @@ class CommandType implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'type' => null
+        'user' => null,
+        'device' => null,
+        'geofence' => null
     ];
 
     /**
@@ -96,7 +100,9 @@ class CommandType implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'type' => 'type'
+        'user' => 'user',
+        'device' => 'device',
+        'geofence' => 'geofence'
     ];
 
     /**
@@ -105,7 +111,9 @@ class CommandType implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'type' => 'setType'
+        'user' => 'setUser',
+        'device' => 'setDevice',
+        'geofence' => 'setGeofence'
     ];
 
     /**
@@ -114,7 +122,9 @@ class CommandType implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'type' => 'getType'
+        'user' => 'getUser',
+        'device' => 'getDevice',
+        'geofence' => 'getGeofence'
     ];
 
     /**
@@ -177,7 +187,9 @@ class CommandType implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
+        $this->container['user'] = isset($data['user']) ? $data['user'] : null;
+        $this->container['device'] = isset($data['device']) ? $data['device'] : null;
+        $this->container['geofence'] = isset($data['geofence']) ? $data['geofence'] : null;
     }
 
     /**
@@ -205,25 +217,73 @@ class CommandType implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets type
+     * Gets user
      *
-     * @return string
+     * @return \Swagger\Client\Model\User
      */
-    public function getType()
+    public function getUser()
     {
-        return $this->container['type'];
+        return $this->container['user'];
     }
 
     /**
-     * Sets type
+     * Sets user
      *
-     * @param string $type type
+     * @param \Swagger\Client\Model\User $user user
      *
      * @return $this
      */
-    public function setType($type)
+    public function setUser($user)
     {
-        $this->container['type'] = $type;
+        $this->container['user'] = $user;
+
+        return $this;
+    }
+
+    /**
+     * Gets device
+     *
+     * @return \Swagger\Client\Model\Device
+     */
+    public function getDevice()
+    {
+        return $this->container['device'];
+    }
+
+    /**
+     * Sets device
+     *
+     * @param \Swagger\Client\Model\Device $device device
+     *
+     * @return $this
+     */
+    public function setDevice($device)
+    {
+        $this->container['device'] = $device;
+
+        return $this;
+    }
+
+    /**
+     * Gets geofence
+     *
+     * @return \Swagger\Client\Model\Geofence
+     */
+    public function getGeofence()
+    {
+        return $this->container['geofence'];
+    }
+
+    /**
+     * Sets geofence
+     *
+     * @param \Swagger\Client\Model\Geofence $geofence geofence
+     *
+     * @return $this
+     */
+    public function setGeofence($geofence)
+    {
+        $this->container['geofence'] = $geofence;
 
         return $this;
     }

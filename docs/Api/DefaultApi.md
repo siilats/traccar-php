@@ -56,8 +56,11 @@ Method | HTTP request | Description
 [**sessionDelete**](DefaultApi.md#sessionDelete) | **DELETE** /session | Close the Session
 [**sessionGet**](DefaultApi.md#sessionGet) | **GET** /session | Fetch Session information
 [**sessionLoginPost**](DefaultApi.md#sessionLoginPost) | **POST** /session/login | Use admin token to log in a user without traccartoken. This deletes the anonymous user that has the token and puts the token into the user w email
-[**sessionLogoutPost**](DefaultApi.md#sessionLogoutPost) | **POST** /session/logout | Use admin token to log out a user by renaming his  traccartoken.
+[**sessionLogoutPost**](DefaultApi.md#sessionLogoutPost) | **POST** /session/logout | logout user create anon user
 [**sessionPost**](DefaultApi.md#sessionPost) | **POST** /session | Create a new Session
+[**sessionRegisterGet**](DefaultApi.md#sessionRegisterGet) | **GET** /session/register | Either logs in or creates anonymous user.
+[**sessionUpdatedevicePost**](DefaultApi.md#sessionUpdatedevicePost) | **POST** /session/updatedevice | Get data on user Bike and Geofence
+[**sessionUserdevicePost**](DefaultApi.md#sessionUserdevicePost) | **POST** /session/userdevice | Get data on user Bike and Geofence
 [**statisticsGet**](DefaultApi.md#statisticsGet) | **GET** /statistics | Fetch server Statistics
 [**usersGet**](DefaultApi.md#usersGet) | **GET** /users | Fetch a list of Users
 [**usersIdDelete**](DefaultApi.md#usersIdDelete) | **DELETE** /users/{id} | Delete a User
@@ -2972,11 +2975,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **anontoken** | **string**|  | [optional]
- **adminemail** | **string**|  | [optional]
- **adminpassword** | **string**|  | [optional]
- **email** | **string**|  | [optional]
- **password** | **string**|  | [optional]
+ **anontoken** | **string**|  |
+ **adminemail** | **string**|  |
+ **adminpassword** | **string**|  |
+ **email** | **string**|  |
+ **password** | **string**|  |
 
 ### Return type
 
@@ -2996,7 +2999,7 @@ Name | Type | Description  | Notes
 # **sessionLogoutPost**
 > \Swagger\Client\Model\User sessionLogoutPost($anontoken, $adminemail, $adminpassword)
 
-Use admin token to log out a user by renaming his  traccartoken.
+logout user create anon user
 
 ### Example
 ```php
@@ -3032,9 +3035,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **anontoken** | **string**|  | [optional]
- **adminemail** | **string**|  | [optional]
- **adminpassword** | **string**|  | [optional]
+ **anontoken** | **string**|  |
+ **adminemail** | **string**|  |
+ **adminpassword** | **string**|  |
 
 ### Return type
 
@@ -3095,6 +3098,176 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**\Swagger\Client\Model\User**](../Model/User.md)
+
+### Authorization
+
+[basicAuth](../../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/x-www-form-urlencoded
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **sessionRegisterGet**
+> \Swagger\Client\Model\User sessionRegisterGet($token)
+
+Either logs in or creates anonymous user.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+// Configure HTTP basic authorization: basicAuth
+$config = Swagger\Client\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
+
+
+$apiInstance = new Swagger\Client\Api\DefaultApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$token = "token_example"; // string | 
+
+try {
+    $result = $apiInstance->sessionRegisterGet($token);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->sessionRegisterGet: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **token** | **string**|  | [optional]
+
+### Return type
+
+[**\Swagger\Client\Model\User**](../Model/User.md)
+
+### Authorization
+
+[basicAuth](../../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/x-www-form-urlencoded
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **sessionUpdatedevicePost**
+> \Swagger\Client\Model\User sessionUpdatedevicePost($adminemail, $adminpassword, $body)
+
+Get data on user Bike and Geofence
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+// Configure HTTP basic authorization: basicAuth
+$config = Swagger\Client\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
+
+
+$apiInstance = new Swagger\Client\Api\DefaultApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$adminemail = "adminemail_example"; // string | 
+$adminpassword = "adminpassword_example"; // string | 
+$body = new \Swagger\Client\Model\Command(); // \Swagger\Client\Model\Command | 
+
+try {
+    $result = $apiInstance->sessionUpdatedevicePost($adminemail, $adminpassword, $body);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->sessionUpdatedevicePost: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **adminemail** | **string**|  |
+ **adminpassword** | **string**|  |
+ **body** | [**\Swagger\Client\Model\Command**](../Model/Command.md)|  |
+
+### Return type
+
+[**\Swagger\Client\Model\User**](../Model/User.md)
+
+### Authorization
+
+[basicAuth](../../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/x-www-form-urlencoded
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **sessionUserdevicePost**
+> \Swagger\Client\Model\UserDevice sessionUserdevicePost($anontoken, $adminemail, $adminpassword)
+
+Get data on user Bike and Geofence
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+// Configure HTTP basic authorization: basicAuth
+$config = Swagger\Client\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
+
+
+$apiInstance = new Swagger\Client\Api\DefaultApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$anontoken = "anontoken_example"; // string | 
+$adminemail = "adminemail_example"; // string | 
+$adminpassword = "adminpassword_example"; // string | 
+
+try {
+    $result = $apiInstance->sessionUserdevicePost($anontoken, $adminemail, $adminpassword);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->sessionUserdevicePost: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **anontoken** | **string**|  |
+ **adminemail** | **string**|  |
+ **adminpassword** | **string**|  |
+
+### Return type
+
+[**\Swagger\Client\Model\UserDevice**](../Model/UserDevice.md)
 
 ### Authorization
 
