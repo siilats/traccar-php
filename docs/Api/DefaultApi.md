@@ -3165,7 +3165,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **sessionUpdatedevicePost**
-> \Swagger\Client\Model\User sessionUpdatedevicePost($adminemail, $adminpassword, $body)
+> \Swagger\Client\Model\User sessionUpdatedevicePost($adminemail, $adminpassword, $commandid, $body)
 
 Get data on user Bike and Geofence
 
@@ -3188,10 +3188,11 @@ $apiInstance = new Swagger\Client\Api\DefaultApi(
 );
 $adminemail = "adminemail_example"; // string | 
 $adminpassword = "adminpassword_example"; // string | 
-$body = new \Swagger\Client\Model\Command(); // \Swagger\Client\Model\Command | 
+$commandid = 56; // int | 
+$body = new \Swagger\Client\Model\UserDevice(); // \Swagger\Client\Model\UserDevice | 
 
 try {
-    $result = $apiInstance->sessionUpdatedevicePost($adminemail, $adminpassword, $body);
+    $result = $apiInstance->sessionUpdatedevicePost($adminemail, $adminpassword, $commandid, $body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->sessionUpdatedevicePost: ', $e->getMessage(), PHP_EOL;
@@ -3205,7 +3206,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **adminemail** | **string**|  |
  **adminpassword** | **string**|  |
- **body** | [**\Swagger\Client\Model\Command**](../Model/Command.md)|  |
+ **commandid** | **int**|  |
+ **body** | [**\Swagger\Client\Model\UserDevice**](../Model/UserDevice.md)|  |
 
 ### Return type
 

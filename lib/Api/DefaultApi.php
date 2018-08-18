@@ -13763,28 +13763,28 @@ class DefaultApi
         $httpBody = '';
         $multipart = false;
 
-        // query params
+
+
+        // form params
         if ($anontoken !== null) {
-            $queryParams['anontoken'] = ObjectSerializer::toQueryValue($anontoken);
+            $formParams['anontoken'] = ObjectSerializer::toFormValue($anontoken);
         }
-        // query params
+        // form params
         if ($adminemail !== null) {
-            $queryParams['adminemail'] = ObjectSerializer::toQueryValue($adminemail);
+            $formParams['adminemail'] = ObjectSerializer::toFormValue($adminemail);
         }
-        // query params
+        // form params
         if ($adminpassword !== null) {
-            $queryParams['adminpassword'] = ObjectSerializer::toQueryValue($adminpassword);
+            $formParams['adminpassword'] = ObjectSerializer::toFormValue($adminpassword);
         }
-        // query params
+        // form params
         if ($email !== null) {
-            $queryParams['email'] = ObjectSerializer::toQueryValue($email);
+            $formParams['email'] = ObjectSerializer::toFormValue($email);
         }
-        // query params
+        // form params
         if ($password !== null) {
-            $queryParams['password'] = ObjectSerializer::toQueryValue($password);
+            $formParams['password'] = ObjectSerializer::toFormValue($password);
         }
-
-
         // body params
         $_tempBody = null;
 
@@ -14063,20 +14063,20 @@ class DefaultApi
         $httpBody = '';
         $multipart = false;
 
-        // query params
+
+
+        // form params
         if ($anontoken !== null) {
-            $queryParams['anontoken'] = ObjectSerializer::toQueryValue($anontoken);
+            $formParams['anontoken'] = ObjectSerializer::toFormValue($anontoken);
         }
-        // query params
+        // form params
         if ($adminemail !== null) {
-            $queryParams['adminemail'] = ObjectSerializer::toQueryValue($adminemail);
+            $formParams['adminemail'] = ObjectSerializer::toFormValue($adminemail);
         }
-        // query params
+        // form params
         if ($adminpassword !== null) {
-            $queryParams['adminpassword'] = ObjectSerializer::toQueryValue($adminpassword);
+            $formParams['adminpassword'] = ObjectSerializer::toFormValue($adminpassword);
         }
-
-
         // body params
         $_tempBody = null;
 
@@ -14685,15 +14685,16 @@ class DefaultApi
      *
      * @param  string $adminemail adminemail (required)
      * @param  string $adminpassword adminpassword (required)
-     * @param  \Swagger\Client\Model\Command $body body (required)
+     * @param  int $commandid commandid (required)
+     * @param  \Swagger\Client\Model\UserDevice $body body (required)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Swagger\Client\Model\User
      */
-    public function sessionUpdatedevicePost($adminemail, $adminpassword, $body)
+    public function sessionUpdatedevicePost($adminemail, $adminpassword, $commandid, $body)
     {
-        list($response) = $this->sessionUpdatedevicePostWithHttpInfo($adminemail, $adminpassword, $body);
+        list($response) = $this->sessionUpdatedevicePostWithHttpInfo($adminemail, $adminpassword, $commandid, $body);
         return $response;
     }
 
@@ -14704,16 +14705,17 @@ class DefaultApi
      *
      * @param  string $adminemail (required)
      * @param  string $adminpassword (required)
-     * @param  \Swagger\Client\Model\Command $body (required)
+     * @param  int $commandid (required)
+     * @param  \Swagger\Client\Model\UserDevice $body (required)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Swagger\Client\Model\User, HTTP status code, HTTP response headers (array of strings)
      */
-    public function sessionUpdatedevicePostWithHttpInfo($adminemail, $adminpassword, $body)
+    public function sessionUpdatedevicePostWithHttpInfo($adminemail, $adminpassword, $commandid, $body)
     {
         $returnType = '\Swagger\Client\Model\User';
-        $request = $this->sessionUpdatedevicePostRequest($adminemail, $adminpassword, $body);
+        $request = $this->sessionUpdatedevicePostRequest($adminemail, $adminpassword, $commandid, $body);
 
         try {
             $options = $this->createHttpClientOption();
@@ -14781,14 +14783,15 @@ class DefaultApi
      *
      * @param  string $adminemail (required)
      * @param  string $adminpassword (required)
-     * @param  \Swagger\Client\Model\Command $body (required)
+     * @param  int $commandid (required)
+     * @param  \Swagger\Client\Model\UserDevice $body (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function sessionUpdatedevicePostAsync($adminemail, $adminpassword, $body)
+    public function sessionUpdatedevicePostAsync($adminemail, $adminpassword, $commandid, $body)
     {
-        return $this->sessionUpdatedevicePostAsyncWithHttpInfo($adminemail, $adminpassword, $body)
+        return $this->sessionUpdatedevicePostAsyncWithHttpInfo($adminemail, $adminpassword, $commandid, $body)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -14803,15 +14806,16 @@ class DefaultApi
      *
      * @param  string $adminemail (required)
      * @param  string $adminpassword (required)
-     * @param  \Swagger\Client\Model\Command $body (required)
+     * @param  int $commandid (required)
+     * @param  \Swagger\Client\Model\UserDevice $body (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function sessionUpdatedevicePostAsyncWithHttpInfo($adminemail, $adminpassword, $body)
+    public function sessionUpdatedevicePostAsyncWithHttpInfo($adminemail, $adminpassword, $commandid, $body)
     {
         $returnType = '\Swagger\Client\Model\User';
-        $request = $this->sessionUpdatedevicePostRequest($adminemail, $adminpassword, $body);
+        $request = $this->sessionUpdatedevicePostRequest($adminemail, $adminpassword, $commandid, $body);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -14855,12 +14859,13 @@ class DefaultApi
      *
      * @param  string $adminemail (required)
      * @param  string $adminpassword (required)
-     * @param  \Swagger\Client\Model\Command $body (required)
+     * @param  int $commandid (required)
+     * @param  \Swagger\Client\Model\UserDevice $body (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function sessionUpdatedevicePostRequest($adminemail, $adminpassword, $body)
+    protected function sessionUpdatedevicePostRequest($adminemail, $adminpassword, $commandid, $body)
     {
         // verify the required parameter 'adminemail' is set
         if ($adminemail === null || (is_array($adminemail) && count($adminemail) === 0)) {
@@ -14872,6 +14877,12 @@ class DefaultApi
         if ($adminpassword === null || (is_array($adminpassword) && count($adminpassword) === 0)) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $adminpassword when calling sessionUpdatedevicePost'
+            );
+        }
+        // verify the required parameter 'commandid' is set
+        if ($commandid === null || (is_array($commandid) && count($commandid) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $commandid when calling sessionUpdatedevicePost'
             );
         }
         // verify the required parameter 'body' is set
@@ -14888,16 +14899,20 @@ class DefaultApi
         $httpBody = '';
         $multipart = false;
 
-        // query params
+
+
+        // form params
         if ($adminemail !== null) {
-            $queryParams['adminemail'] = ObjectSerializer::toQueryValue($adminemail);
+            $formParams['adminemail'] = ObjectSerializer::toFormValue($adminemail);
         }
-        // query params
+        // form params
         if ($adminpassword !== null) {
-            $queryParams['adminpassword'] = ObjectSerializer::toQueryValue($adminpassword);
+            $formParams['adminpassword'] = ObjectSerializer::toFormValue($adminpassword);
         }
-
-
+        // form params
+        if ($commandid !== null) {
+            $formParams['commandid'] = ObjectSerializer::toFormValue($commandid);
+        }
         // body params
         $_tempBody = null;
         if (isset($body)) {
@@ -15179,20 +15194,20 @@ class DefaultApi
         $httpBody = '';
         $multipart = false;
 
-        // query params
+
+
+        // form params
         if ($anontoken !== null) {
-            $queryParams['anontoken'] = ObjectSerializer::toQueryValue($anontoken);
+            $formParams['anontoken'] = ObjectSerializer::toFormValue($anontoken);
         }
-        // query params
+        // form params
         if ($adminemail !== null) {
-            $queryParams['adminemail'] = ObjectSerializer::toQueryValue($adminemail);
+            $formParams['adminemail'] = ObjectSerializer::toFormValue($adminemail);
         }
-        // query params
+        // form params
         if ($adminpassword !== null) {
-            $queryParams['adminpassword'] = ObjectSerializer::toQueryValue($adminpassword);
+            $formParams['adminpassword'] = ObjectSerializer::toFormValue($adminpassword);
         }
-
-
         // body params
         $_tempBody = null;
 
