@@ -3225,7 +3225,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **sessionUserdevicePost**
-> \Swagger\Client\Model\UserDevice sessionUserdevicePost($anontoken, $adminemail, $adminpassword)
+> \Swagger\Client\Model\UserDevice sessionUserdevicePost($anontoken, $adminemail, $adminpassword, $bikeimei)
 
 Get data on user Bike and Geofence
 
@@ -3249,9 +3249,10 @@ $apiInstance = new Swagger\Client\Api\DefaultApi(
 $anontoken = "anontoken_example"; // string | 
 $adminemail = "adminemail_example"; // string | 
 $adminpassword = "adminpassword_example"; // string | 
+$bikeimei = "bikeimei_example"; // string | 
 
 try {
-    $result = $apiInstance->sessionUserdevicePost($anontoken, $adminemail, $adminpassword);
+    $result = $apiInstance->sessionUserdevicePost($anontoken, $adminemail, $adminpassword, $bikeimei);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->sessionUserdevicePost: ', $e->getMessage(), PHP_EOL;
@@ -3266,6 +3267,7 @@ Name | Type | Description  | Notes
  **anontoken** | **string**|  |
  **adminemail** | **string**|  |
  **adminpassword** | **string**|  |
+ **bikeimei** | **string**|  |
 
 ### Return type
 

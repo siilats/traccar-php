@@ -14992,14 +14992,15 @@ class DefaultApi
      * @param  string $anontoken anontoken (required)
      * @param  string $adminemail adminemail (required)
      * @param  string $adminpassword adminpassword (required)
+     * @param  string $bikeimei bikeimei (required)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Swagger\Client\Model\UserDevice
      */
-    public function sessionUserdevicePost($anontoken, $adminemail, $adminpassword)
+    public function sessionUserdevicePost($anontoken, $adminemail, $adminpassword, $bikeimei)
     {
-        list($response) = $this->sessionUserdevicePostWithHttpInfo($anontoken, $adminemail, $adminpassword);
+        list($response) = $this->sessionUserdevicePostWithHttpInfo($anontoken, $adminemail, $adminpassword, $bikeimei);
         return $response;
     }
 
@@ -15011,15 +15012,16 @@ class DefaultApi
      * @param  string $anontoken (required)
      * @param  string $adminemail (required)
      * @param  string $adminpassword (required)
+     * @param  string $bikeimei (required)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Swagger\Client\Model\UserDevice, HTTP status code, HTTP response headers (array of strings)
      */
-    public function sessionUserdevicePostWithHttpInfo($anontoken, $adminemail, $adminpassword)
+    public function sessionUserdevicePostWithHttpInfo($anontoken, $adminemail, $adminpassword, $bikeimei)
     {
         $returnType = '\Swagger\Client\Model\UserDevice';
-        $request = $this->sessionUserdevicePostRequest($anontoken, $adminemail, $adminpassword);
+        $request = $this->sessionUserdevicePostRequest($anontoken, $adminemail, $adminpassword, $bikeimei);
 
         try {
             $options = $this->createHttpClientOption();
@@ -15088,13 +15090,14 @@ class DefaultApi
      * @param  string $anontoken (required)
      * @param  string $adminemail (required)
      * @param  string $adminpassword (required)
+     * @param  string $bikeimei (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function sessionUserdevicePostAsync($anontoken, $adminemail, $adminpassword)
+    public function sessionUserdevicePostAsync($anontoken, $adminemail, $adminpassword, $bikeimei)
     {
-        return $this->sessionUserdevicePostAsyncWithHttpInfo($anontoken, $adminemail, $adminpassword)
+        return $this->sessionUserdevicePostAsyncWithHttpInfo($anontoken, $adminemail, $adminpassword, $bikeimei)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -15110,14 +15113,15 @@ class DefaultApi
      * @param  string $anontoken (required)
      * @param  string $adminemail (required)
      * @param  string $adminpassword (required)
+     * @param  string $bikeimei (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function sessionUserdevicePostAsyncWithHttpInfo($anontoken, $adminemail, $adminpassword)
+    public function sessionUserdevicePostAsyncWithHttpInfo($anontoken, $adminemail, $adminpassword, $bikeimei)
     {
         $returnType = '\Swagger\Client\Model\UserDevice';
-        $request = $this->sessionUserdevicePostRequest($anontoken, $adminemail, $adminpassword);
+        $request = $this->sessionUserdevicePostRequest($anontoken, $adminemail, $adminpassword, $bikeimei);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -15162,11 +15166,12 @@ class DefaultApi
      * @param  string $anontoken (required)
      * @param  string $adminemail (required)
      * @param  string $adminpassword (required)
+     * @param  string $bikeimei (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function sessionUserdevicePostRequest($anontoken, $adminemail, $adminpassword)
+    protected function sessionUserdevicePostRequest($anontoken, $adminemail, $adminpassword, $bikeimei)
     {
         // verify the required parameter 'anontoken' is set
         if ($anontoken === null || (is_array($anontoken) && count($anontoken) === 0)) {
@@ -15184,6 +15189,12 @@ class DefaultApi
         if ($adminpassword === null || (is_array($adminpassword) && count($adminpassword) === 0)) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $adminpassword when calling sessionUserdevicePost'
+            );
+        }
+        // verify the required parameter 'bikeimei' is set
+        if ($bikeimei === null || (is_array($bikeimei) && count($bikeimei) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $bikeimei when calling sessionUserdevicePost'
             );
         }
 
@@ -15207,6 +15218,10 @@ class DefaultApi
         // form params
         if ($adminpassword !== null) {
             $formParams['adminpassword'] = ObjectSerializer::toFormValue($adminpassword);
+        }
+        // form params
+        if ($bikeimei !== null) {
+            $formParams['bikeimei'] = ObjectSerializer::toFormValue($bikeimei);
         }
         // body params
         $_tempBody = null;
