@@ -59,8 +59,8 @@ Method | HTTP request | Description
 [**sessionLogoutPost**](DefaultApi.md#sessionLogoutPost) | **POST** /session/logout | logout user create anon user
 [**sessionPost**](DefaultApi.md#sessionPost) | **POST** /session | Create a new Session
 [**sessionRegisterGet**](DefaultApi.md#sessionRegisterGet) | **GET** /session/register | Either logs in or creates anonymous user.
-[**sessionUpdatedevicePost**](DefaultApi.md#sessionUpdatedevicePost) | **POST** /session/updatedevice | Get data on user Bike and Geofence
-[**sessionUserdevicePost**](DefaultApi.md#sessionUserdevicePost) | **POST** /session/userdevice | Get data on user Bike and Geofence
+[**sessionUserdevicePost**](DefaultApi.md#sessionUserdevicePost) | **POST** /session/userdevice | Get data on User, Device, and Geofence
+[**sessionUserdevicePut**](DefaultApi.md#sessionUserdevicePut) | **PUT** /session/userdevice | Update data on User, Device, and Geofence
 [**statisticsGet**](DefaultApi.md#statisticsGet) | **GET** /statistics | Fetch server Statistics
 [**usersGet**](DefaultApi.md#usersGet) | **GET** /users | Fetch a list of Users
 [**usersIdDelete**](DefaultApi.md#usersIdDelete) | **DELETE** /users/{id} | Delete a User
@@ -3164,70 +3164,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **sessionUpdatedevicePost**
-> \Swagger\Client\Model\User sessionUpdatedevicePost($adminemail, $adminpassword, $commandid, $body)
-
-Get data on user Bike and Geofence
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-// Configure HTTP basic authorization: basicAuth
-$config = Swagger\Client\Configuration::getDefaultConfiguration()
-              ->setUsername('YOUR_USERNAME')
-              ->setPassword('YOUR_PASSWORD');
-
-
-$apiInstance = new Swagger\Client\Api\DefaultApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$adminemail = "adminemail_example"; // string | 
-$adminpassword = "adminpassword_example"; // string | 
-$commandid = 56; // int | 
-$body = new \Swagger\Client\Model\UserDevice(); // \Swagger\Client\Model\UserDevice | 
-
-try {
-    $result = $apiInstance->sessionUpdatedevicePost($adminemail, $adminpassword, $commandid, $body);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling DefaultApi->sessionUpdatedevicePost: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **adminemail** | **string**|  |
- **adminpassword** | **string**|  |
- **commandid** | **int**|  |
- **body** | [**\Swagger\Client\Model\UserDevice**](../Model/UserDevice.md)|  |
-
-### Return type
-
-[**\Swagger\Client\Model\User**](../Model/User.md)
-
-### Authorization
-
-[basicAuth](../../README.md#basicAuth)
-
-### HTTP request headers
-
- - **Content-Type**: application/x-www-form-urlencoded
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
 # **sessionUserdevicePost**
 > \Swagger\Client\Model\UserDevice sessionUserdevicePost($anontoken, $adminemail, $adminpassword, $bikeimei)
 
-Get data on user Bike and Geofence
+Get data on User, Device, and Geofence
 
 ### Example
 ```php
@@ -3280,6 +3220,60 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/x-www-form-urlencoded
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **sessionUserdevicePut**
+> \Swagger\Client\Model\User sessionUserdevicePut($body)
+
+Update data on User, Device, and Geofence
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+// Configure HTTP basic authorization: basicAuth
+$config = Swagger\Client\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
+
+
+$apiInstance = new Swagger\Client\Api\DefaultApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$body = new \Swagger\Client\Model\Body(); // \Swagger\Client\Model\Body | Request parameters and User Device to update
+
+try {
+    $result = $apiInstance->sessionUserdevicePut($body);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->sessionUserdevicePut: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**\Swagger\Client\Model\Body**](../Model/Body.md)| Request parameters and User Device to update | [optional]
+
+### Return type
+
+[**\Swagger\Client\Model\User**](../Model/User.md)
+
+### Authorization
+
+[basicAuth](../../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)

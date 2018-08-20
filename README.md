@@ -144,8 +144,8 @@ Class | Method | HTTP request | Description
 *DefaultApi* | [**sessionLogoutPost**](docs/Api/DefaultApi.md#sessionlogoutpost) | **POST** /session/logout | logout user create anon user
 *DefaultApi* | [**sessionPost**](docs/Api/DefaultApi.md#sessionpost) | **POST** /session | Create a new Session
 *DefaultApi* | [**sessionRegisterGet**](docs/Api/DefaultApi.md#sessionregisterget) | **GET** /session/register | Either logs in or creates anonymous user.
-*DefaultApi* | [**sessionUpdatedevicePost**](docs/Api/DefaultApi.md#sessionupdatedevicepost) | **POST** /session/updatedevice | Get data on user Bike and Geofence
-*DefaultApi* | [**sessionUserdevicePost**](docs/Api/DefaultApi.md#sessionuserdevicepost) | **POST** /session/userdevice | Get data on user Bike and Geofence
+*DefaultApi* | [**sessionUserdevicePost**](docs/Api/DefaultApi.md#sessionuserdevicepost) | **POST** /session/userdevice | Get data on User, Device, and Geofence
+*DefaultApi* | [**sessionUserdevicePut**](docs/Api/DefaultApi.md#sessionuserdeviceput) | **PUT** /session/userdevice | Update data on User, Device, and Geofence
 *DefaultApi* | [**statisticsGet**](docs/Api/DefaultApi.md#statisticsget) | **GET** /statistics | Fetch server Statistics
 *DefaultApi* | [**usersGet**](docs/Api/DefaultApi.md#usersget) | **GET** /users | Fetch a list of Users
 *DefaultApi* | [**usersIdDelete**](docs/Api/DefaultApi.md#usersiddelete) | **DELETE** /users/{id} | Delete a User
@@ -156,6 +156,7 @@ Class | Method | HTTP request | Description
 ## Documentation For Models
 
  - [Attribute](docs/Model/Attribute.md)
+ - [Body](docs/Model/Body.md)
  - [Calendar](docs/Model/Calendar.md)
  - [Command](docs/Model/Command.md)
  - [CommandType](docs/Model/CommandType.md)
