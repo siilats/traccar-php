@@ -60,7 +60,8 @@ class Body implements ModelInterface, ArrayAccess
         'adminemail' => 'string',
         'adminpassword' => 'string',
         'commandid' => 'int',
-        'userdevice' => '\Swagger\Client\Model\UserDevice'
+        'user' => '\Swagger\Client\Model\User',
+        'device' => '\Swagger\Client\Model\Device'
     ];
 
     /**
@@ -72,7 +73,8 @@ class Body implements ModelInterface, ArrayAccess
         'adminemail' => null,
         'adminpassword' => null,
         'commandid' => null,
-        'userdevice' => null
+        'user' => null,
+        'device' => null
     ];
 
     /**
@@ -105,7 +107,8 @@ class Body implements ModelInterface, ArrayAccess
         'adminemail' => 'adminemail',
         'adminpassword' => 'adminpassword',
         'commandid' => 'commandid',
-        'userdevice' => 'userdevice'
+        'user' => 'user',
+        'device' => 'device'
     ];
 
     /**
@@ -117,7 +120,8 @@ class Body implements ModelInterface, ArrayAccess
         'adminemail' => 'setAdminemail',
         'adminpassword' => 'setAdminpassword',
         'commandid' => 'setCommandid',
-        'userdevice' => 'setUserdevice'
+        'user' => 'setUser',
+        'device' => 'setDevice'
     ];
 
     /**
@@ -129,7 +133,8 @@ class Body implements ModelInterface, ArrayAccess
         'adminemail' => 'getAdminemail',
         'adminpassword' => 'getAdminpassword',
         'commandid' => 'getCommandid',
-        'userdevice' => 'getUserdevice'
+        'user' => 'getUser',
+        'device' => 'getDevice'
     ];
 
     /**
@@ -195,7 +200,8 @@ class Body implements ModelInterface, ArrayAccess
         $this->container['adminemail'] = isset($data['adminemail']) ? $data['adminemail'] : null;
         $this->container['adminpassword'] = isset($data['adminpassword']) ? $data['adminpassword'] : null;
         $this->container['commandid'] = isset($data['commandid']) ? $data['commandid'] : null;
-        $this->container['userdevice'] = isset($data['userdevice']) ? $data['userdevice'] : null;
+        $this->container['user'] = isset($data['user']) ? $data['user'] : null;
+        $this->container['device'] = isset($data['device']) ? $data['device'] : null;
     }
 
     /**
@@ -216,8 +222,11 @@ class Body implements ModelInterface, ArrayAccess
         if ($this->container['commandid'] === null) {
             $invalidProperties[] = "'commandid' can't be null";
         }
-        if ($this->container['userdevice'] === null) {
-            $invalidProperties[] = "'userdevice' can't be null";
+        if ($this->container['user'] === null) {
+            $invalidProperties[] = "'user' can't be null";
+        }
+        if ($this->container['device'] === null) {
+            $invalidProperties[] = "'device' can't be null";
         }
         return $invalidProperties;
     }
@@ -307,25 +316,49 @@ class Body implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets userdevice
+     * Gets user
      *
-     * @return \Swagger\Client\Model\UserDevice
+     * @return \Swagger\Client\Model\User
      */
-    public function getUserdevice()
+    public function getUser()
     {
-        return $this->container['userdevice'];
+        return $this->container['user'];
     }
 
     /**
-     * Sets userdevice
+     * Sets user
      *
-     * @param \Swagger\Client\Model\UserDevice $userdevice userdevice
+     * @param \Swagger\Client\Model\User $user user
      *
      * @return $this
      */
-    public function setUserdevice($userdevice)
+    public function setUser($user)
     {
-        $this->container['userdevice'] = $userdevice;
+        $this->container['user'] = $user;
+
+        return $this;
+    }
+
+    /**
+     * Gets device
+     *
+     * @return \Swagger\Client\Model\Device
+     */
+    public function getDevice()
+    {
+        return $this->container['device'];
+    }
+
+    /**
+     * Sets device
+     *
+     * @param \Swagger\Client\Model\Device $device device
+     *
+     * @return $this
+     */
+    public function setDevice($device)
+    {
+        $this->container['device'] = $device;
 
         return $this;
     }
