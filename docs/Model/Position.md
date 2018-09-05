@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 **course** | **float** |  | [optional] 
 **address** | **string** |  | [optional] 
 **accuracy** | **float** |  | [optional] 
-**network** | **string** |  | [optional] 
+**network** | [**\Swagger\Client\Model\Network**](Network.md) |  | [optional] 
 **additional_properties** | **string** |  | [optional] 
 **attributes** | **map[string,string]** |  | [optional] 
 

@@ -72,7 +72,7 @@ class Position implements ModelInterface, ArrayAccess
         'course' => 'float',
         'address' => 'string',
         'accuracy' => 'float',
-        'network' => 'string',
+        'network' => '\Swagger\Client\Model\Network',
         'additional_properties' => 'string',
         'attributes' => 'map[string,string]'
     ];
@@ -669,7 +669,7 @@ class Position implements ModelInterface, ArrayAccess
     /**
      * Gets network
      *
-     * @return string
+     * @return \Swagger\Client\Model\Network
      */
     public function getNetwork()
     {
@@ -679,7 +679,7 @@ class Position implements ModelInterface, ArrayAccess
     /**
      * Sets network
      *
-     * @param string $network network
+     * @param \Swagger\Client\Model\Network $network network
      *
      * @return $this
      */

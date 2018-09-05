@@ -167,6 +167,8 @@ Class | Method | HTTP request | Description
  - [Event](docs/Model/Event.md)
  - [Geofence](docs/Model/Geofence.md)
  - [Group](docs/Model/Group.md)
+ - [Network](docs/Model/Network.md)
+ - [NetworkCellTowers](docs/Model/NetworkCellTowers.md)
  - [Notification](docs/Model/Notification.md)
  - [NotificationType](docs/Model/NotificationType.md)
  - [Permission](docs/Model/Permission.md)
