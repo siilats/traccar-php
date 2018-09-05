@@ -131,6 +131,7 @@ Class | Method | HTTP request | Description
 *DefaultApi* | [**permissionsDelete**](docs/Api/DefaultApi.md#permissionsdelete) | **DELETE** /permissions | Unlink an Object from another Object
 *DefaultApi* | [**permissionsPost**](docs/Api/DefaultApi.md#permissionspost) | **POST** /permissions | Link an Object to another Object
 *DefaultApi* | [**positionsGet**](docs/Api/DefaultApi.md#positionsget) | **GET** /positions | Fetches a list of Positions
+*DefaultApi* | [**reportsDeviceRouteGet**](docs/Api/DefaultApi.md#reportsdevicerouteget) | **GET** /reports/deviceRoute | Fetch a list of Positions within between start and end points
 *DefaultApi* | [**reportsEventsGet**](docs/Api/DefaultApi.md#reportseventsget) | **GET** /reports/events | Fetch a list of Events within the time period for the Devices or Groups
 *DefaultApi* | [**reportsRouteGet**](docs/Api/DefaultApi.md#reportsrouteget) | **GET** /reports/route | Fetch a list of Positions within the time period for the Devices or Groups
 *DefaultApi* | [**reportsStopsGet**](docs/Api/DefaultApi.md#reportsstopsget) | **GET** /reports/stops | Fetch a list of ReportStops within the time period for the Devices or Groups

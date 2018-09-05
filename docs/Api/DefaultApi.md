@@ -46,6 +46,7 @@ Method | HTTP request | Description
 [**permissionsDelete**](DefaultApi.md#permissionsDelete) | **DELETE** /permissions | Unlink an Object from another Object
 [**permissionsPost**](DefaultApi.md#permissionsPost) | **POST** /permissions | Link an Object to another Object
 [**positionsGet**](DefaultApi.md#positionsGet) | **GET** /positions | Fetches a list of Positions
+[**reportsDeviceRouteGet**](DefaultApi.md#reportsDeviceRouteGet) | **GET** /reports/deviceRoute | Fetch a list of Positions within between start and end points
 [**reportsEventsGet**](DefaultApi.md#reportsEventsGet) | **GET** /reports/events | Fetch a list of Events within the time period for the Devices or Groups
 [**reportsRouteGet**](DefaultApi.md#reportsRouteGet) | **GET** /reports/route | Fetch a list of Positions within the time period for the Devices or Groups
 [**reportsStopsGet**](DefaultApi.md#reportsStopsGet) | **GET** /reports/stops | Fetch a list of ReportStops within the time period for the Devices or Groups
@@ -2412,6 +2413,66 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: application/json, text/csv, application/gpx+xml
  - **Accept**: application/json, text/csv, application/gpx+xml
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **reportsDeviceRouteGet**
+> \Swagger\Client\Model\Position[] reportsDeviceRouteGet($device_unique_id, $start_position_id, $end_position_id)
+
+Fetch a list of Positions within between start and end points
+
+Device uniqueid, start position id, and end position id must be provided
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+// Configure HTTP basic authorization: basicAuth
+$config = Swagger\Client\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
+
+
+$apiInstance = new Swagger\Client\Api\DefaultApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$device_unique_id = "device_unique_id_example"; // string | 
+$start_position_id = 56; // int | 
+$end_position_id = 56; // int | 
+
+try {
+    $result = $apiInstance->reportsDeviceRouteGet($device_unique_id, $start_position_id, $end_position_id);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->reportsDeviceRouteGet: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **device_unique_id** | **string**|  |
+ **start_position_id** | **int**|  |
+ **end_position_id** | **int**|  |
+
+### Return type
+
+[**\Swagger\Client\Model\Position[]**](../Model/Position.md)
+
+### Authorization
+
+[basicAuth](../../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
