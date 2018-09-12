@@ -1,6 +1,6 @@
 # Swagger\Client\DefaultApi
 
-All URIs are relative to *http://nfn.siilats.com:8082/api*
+All URIs are relative to *http://bolt.miami:8082/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
