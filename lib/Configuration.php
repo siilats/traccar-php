@@ -81,7 +81,7 @@ class Configuration
      *
      * @var string
      */
-    protected $host = 'http://bolt.miami/bolt2/api';
+    protected $host = 'http://bolt.miami:8082/api';
 
     /**
      * User agent of the HTTP request, set to "PHP-Swagger" by default

@@ -85,7 +85,7 @@ try {
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *http://bolt.miami/bolt2/api*
+All URIs are relative to *http://bolt.miami:8082/api*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
