@@ -81,7 +81,7 @@ class Configuration
      *
      * @var string
      */
-    protected $host = 'http://bolt.miami/gps/api';
+    protected $host = 'https://bolt.miami/gps/api';
 
     /**
      * User agent of the HTTP request, set to "PHP-Swagger" by default

@@ -85,7 +85,7 @@ try {
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *http://bolt.miami/gps/api*
+All URIs are relative to *https://bolt.miami/gps/api*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
