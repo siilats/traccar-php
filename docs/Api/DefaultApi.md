@@ -1,6 +1,6 @@
 # Swagger\Client\DefaultApi
 
-All URIs are relative to *https://bolt.miami/gps/api*
+All URIs are relative to *https://www.bolt.miami/gps/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
