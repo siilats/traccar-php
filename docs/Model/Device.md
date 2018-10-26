@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **name** | **string** |  | [optional] 
 **unique_id** | **string** |  | [optional] 
 **status** | **string** |  | [optional] 
+**disabled** | **bool** |  | [optional] 
 **last_update** | [**\DateTime**](\DateTime.md) | in IS0 8601 format. eg. &#x60;1963-11-22T18:30:00Z&#x60; | [optional] 
 **position_id** | **int** |  | [optional] 
 **group_id** | **int** |  | [optional] 

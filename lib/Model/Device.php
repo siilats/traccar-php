@@ -61,6 +61,7 @@ class Device implements ModelInterface, ArrayAccess
         'name' => 'string',
         'unique_id' => 'string',
         'status' => 'string',
+        'disabled' => 'bool',
         'last_update' => '\DateTime',
         'position_id' => 'int',
         'group_id' => 'int',
@@ -82,6 +83,7 @@ class Device implements ModelInterface, ArrayAccess
         'name' => null,
         'unique_id' => null,
         'status' => null,
+        'disabled' => null,
         'last_update' => 'date-time',
         'position_id' => null,
         'group_id' => null,
@@ -124,6 +126,7 @@ class Device implements ModelInterface, ArrayAccess
         'name' => 'name',
         'unique_id' => 'uniqueId',
         'status' => 'status',
+        'disabled' => 'disabled',
         'last_update' => 'lastUpdate',
         'position_id' => 'positionId',
         'group_id' => 'groupId',
@@ -145,6 +148,7 @@ class Device implements ModelInterface, ArrayAccess
         'name' => 'setName',
         'unique_id' => 'setUniqueId',
         'status' => 'setStatus',
+        'disabled' => 'setDisabled',
         'last_update' => 'setLastUpdate',
         'position_id' => 'setPositionId',
         'group_id' => 'setGroupId',
@@ -166,6 +170,7 @@ class Device implements ModelInterface, ArrayAccess
         'name' => 'getName',
         'unique_id' => 'getUniqueId',
         'status' => 'getStatus',
+        'disabled' => 'getDisabled',
         'last_update' => 'getLastUpdate',
         'position_id' => 'getPositionId',
         'group_id' => 'getGroupId',
@@ -241,6 +246,7 @@ class Device implements ModelInterface, ArrayAccess
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['unique_id'] = isset($data['unique_id']) ? $data['unique_id'] : null;
         $this->container['status'] = isset($data['status']) ? $data['status'] : null;
+        $this->container['disabled'] = isset($data['disabled']) ? $data['disabled'] : null;
         $this->container['last_update'] = isset($data['last_update']) ? $data['last_update'] : null;
         $this->container['position_id'] = isset($data['position_id']) ? $data['position_id'] : null;
         $this->container['group_id'] = isset($data['group_id']) ? $data['group_id'] : null;
@@ -368,6 +374,30 @@ class Device implements ModelInterface, ArrayAccess
     public function setStatus($status)
     {
         $this->container['status'] = $status;
+
+        return $this;
+    }
+
+    /**
+     * Gets disabled
+     *
+     * @return bool
+     */
+    public function getDisabled()
+    {
+        return $this->container['disabled'];
+    }
+
+    /**
+     * Sets disabled
+     *
+     * @param bool $disabled disabled
+     *
+     * @return $this
+     */
+    public function setDisabled($disabled)
+    {
+        $this->container['disabled'] = $disabled;
 
         return $this;
     }
