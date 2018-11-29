@@ -59,7 +59,7 @@ Method | HTTP request | Description
 [**sessionLoginPost**](DefaultApi.md#sessionLoginPost) | **POST** /session/login | Use admin token to log in a user without traccartoken. This deletes the anonymous user that has the token and puts the token into the user w email
 [**sessionLogoutPost**](DefaultApi.md#sessionLogoutPost) | **POST** /session/logout | logout user create anon user
 [**sessionPost**](DefaultApi.md#sessionPost) | **POST** /session | Create a new Session
-[**sessionRegisterGet**](DefaultApi.md#sessionRegisterGet) | **GET** /session/register | Either logs in or creates anonymous user.
+[**sessionRegisterGet**](DefaultApi.md#sessionRegisterGet) | **GET** /session/register | Either logs in or creates anonymous user. Sets geofence id if provided.
 [**sessionUserdevicePost**](DefaultApi.md#sessionUserdevicePost) | **POST** /session/userdevice | Get data on User, Device, and Geofence
 [**sessionUserdevicePut**](DefaultApi.md#sessionUserdevicePut) | **PUT** /session/userdevice | Update data on User, Device, and Geofence
 [**statisticsGet**](DefaultApi.md#statisticsGet) | **GET** /statistics | Fetch server Statistics
@@ -2996,7 +2996,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **sessionLoginPost**
-> \Swagger\Client\Model\User sessionLoginPost($anontoken, $adminemail, $adminpassword, $email, $password)
+> \Swagger\Client\Model\User sessionLoginPost($anontoken, $adminemail, $adminpassword, $email, $password, $google_login)
 
 Use admin token to log in a user without traccartoken. This deletes the anonymous user that has the token and puts the token into the user w email
 
@@ -3022,9 +3022,10 @@ $adminemail = "adminemail_example"; // string |
 $adminpassword = "adminpassword_example"; // string | 
 $email = "email_example"; // string | 
 $password = "password_example"; // string | 
+$google_login = true; // bool | 
 
 try {
-    $result = $apiInstance->sessionLoginPost($anontoken, $adminemail, $adminpassword, $email, $password);
+    $result = $apiInstance->sessionLoginPost($anontoken, $adminemail, $adminpassword, $email, $password, $google_login);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->sessionLoginPost: ', $e->getMessage(), PHP_EOL;
@@ -3041,6 +3042,7 @@ Name | Type | Description  | Notes
  **adminpassword** | **string**|  |
  **email** | **string**|  |
  **password** | **string**|  |
+ **google_login** | **bool**|  | [optional]
 
 ### Return type
 
@@ -3172,9 +3174,9 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **sessionRegisterGet**
-> \Swagger\Client\Model\User sessionRegisterGet($token)
+> \Swagger\Client\Model\User sessionRegisterGet($token, $geo_id)
 
-Either logs in or creates anonymous user.
+Either logs in or creates anonymous user. Sets geofence id if provided.
 
 ### Example
 ```php
@@ -3194,9 +3196,10 @@ $apiInstance = new Swagger\Client\Api\DefaultApi(
     $config
 );
 $token = "token_example"; // string | 
+$geo_id = 56; // int | 
 
 try {
-    $result = $apiInstance->sessionRegisterGet($token);
+    $result = $apiInstance->sessionRegisterGet($token, $geo_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->sessionRegisterGet: ', $e->getMessage(), PHP_EOL;
@@ -3209,6 +3212,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **token** | **string**|  | [optional]
+ **geo_id** | **int**|  | [optional]
 
 ### Return type
 

@@ -13833,14 +13833,15 @@ class DefaultApi
      * @param  string $adminpassword adminpassword (required)
      * @param  string $email email (required)
      * @param  string $password password (required)
+     * @param  bool $google_login google_login (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Swagger\Client\Model\User
      */
-    public function sessionLoginPost($anontoken, $adminemail, $adminpassword, $email, $password)
+    public function sessionLoginPost($anontoken, $adminemail, $adminpassword, $email, $password, $google_login = null)
     {
-        list($response) = $this->sessionLoginPostWithHttpInfo($anontoken, $adminemail, $adminpassword, $email, $password);
+        list($response) = $this->sessionLoginPostWithHttpInfo($anontoken, $adminemail, $adminpassword, $email, $password, $google_login);
         return $response;
     }
 
@@ -13854,15 +13855,16 @@ class DefaultApi
      * @param  string $adminpassword (required)
      * @param  string $email (required)
      * @param  string $password (required)
+     * @param  bool $google_login (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Swagger\Client\Model\User, HTTP status code, HTTP response headers (array of strings)
      */
-    public function sessionLoginPostWithHttpInfo($anontoken, $adminemail, $adminpassword, $email, $password)
+    public function sessionLoginPostWithHttpInfo($anontoken, $adminemail, $adminpassword, $email, $password, $google_login = null)
     {
         $returnType = '\Swagger\Client\Model\User';
-        $request = $this->sessionLoginPostRequest($anontoken, $adminemail, $adminpassword, $email, $password);
+        $request = $this->sessionLoginPostRequest($anontoken, $adminemail, $adminpassword, $email, $password, $google_login);
 
         try {
             $options = $this->createHttpClientOption();
@@ -13933,13 +13935,14 @@ class DefaultApi
      * @param  string $adminpassword (required)
      * @param  string $email (required)
      * @param  string $password (required)
+     * @param  bool $google_login (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function sessionLoginPostAsync($anontoken, $adminemail, $adminpassword, $email, $password)
+    public function sessionLoginPostAsync($anontoken, $adminemail, $adminpassword, $email, $password, $google_login = null)
     {
-        return $this->sessionLoginPostAsyncWithHttpInfo($anontoken, $adminemail, $adminpassword, $email, $password)
+        return $this->sessionLoginPostAsyncWithHttpInfo($anontoken, $adminemail, $adminpassword, $email, $password, $google_login)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -13957,14 +13960,15 @@ class DefaultApi
      * @param  string $adminpassword (required)
      * @param  string $email (required)
      * @param  string $password (required)
+     * @param  bool $google_login (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function sessionLoginPostAsyncWithHttpInfo($anontoken, $adminemail, $adminpassword, $email, $password)
+    public function sessionLoginPostAsyncWithHttpInfo($anontoken, $adminemail, $adminpassword, $email, $password, $google_login = null)
     {
         $returnType = '\Swagger\Client\Model\User';
-        $request = $this->sessionLoginPostRequest($anontoken, $adminemail, $adminpassword, $email, $password);
+        $request = $this->sessionLoginPostRequest($anontoken, $adminemail, $adminpassword, $email, $password, $google_login);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -14011,11 +14015,12 @@ class DefaultApi
      * @param  string $adminpassword (required)
      * @param  string $email (required)
      * @param  string $password (required)
+     * @param  bool $google_login (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function sessionLoginPostRequest($anontoken, $adminemail, $adminpassword, $email, $password)
+    protected function sessionLoginPostRequest($anontoken, $adminemail, $adminpassword, $email, $password, $google_login = null)
     {
         // verify the required parameter 'anontoken' is set
         if ($anontoken === null || (is_array($anontoken) && count($anontoken) === 0)) {
@@ -14076,6 +14081,10 @@ class DefaultApi
         // form params
         if ($password !== null) {
             $formParams['password'] = ObjectSerializer::toFormValue($password);
+        }
+        // form params
+        if ($google_login !== null) {
+            $formParams['googleLogin'] = ObjectSerializer::toFormValue($google_login);
         }
         // body params
         $_tempBody = null;
@@ -14717,35 +14726,37 @@ class DefaultApi
     /**
      * Operation sessionRegisterGet
      *
-     * Either logs in or creates anonymous user.
+     * Either logs in or creates anonymous user. Sets geofence id if provided.
      *
      * @param  string $token token (optional)
+     * @param  int $geo_id geo_id (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Swagger\Client\Model\User
      */
-    public function sessionRegisterGet($token = null)
+    public function sessionRegisterGet($token = null, $geo_id = null)
     {
-        list($response) = $this->sessionRegisterGetWithHttpInfo($token);
+        list($response) = $this->sessionRegisterGetWithHttpInfo($token, $geo_id);
         return $response;
     }
 
     /**
      * Operation sessionRegisterGetWithHttpInfo
      *
-     * Either logs in or creates anonymous user.
+     * Either logs in or creates anonymous user. Sets geofence id if provided.
      *
      * @param  string $token (optional)
+     * @param  int $geo_id (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Swagger\Client\Model\User, HTTP status code, HTTP response headers (array of strings)
      */
-    public function sessionRegisterGetWithHttpInfo($token = null)
+    public function sessionRegisterGetWithHttpInfo($token = null, $geo_id = null)
     {
         $returnType = '\Swagger\Client\Model\User';
-        $request = $this->sessionRegisterGetRequest($token);
+        $request = $this->sessionRegisterGetRequest($token, $geo_id);
 
         try {
             $options = $this->createHttpClientOption();
@@ -14809,16 +14820,17 @@ class DefaultApi
     /**
      * Operation sessionRegisterGetAsync
      *
-     * Either logs in or creates anonymous user.
+     * Either logs in or creates anonymous user. Sets geofence id if provided.
      *
      * @param  string $token (optional)
+     * @param  int $geo_id (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function sessionRegisterGetAsync($token = null)
+    public function sessionRegisterGetAsync($token = null, $geo_id = null)
     {
-        return $this->sessionRegisterGetAsyncWithHttpInfo($token)
+        return $this->sessionRegisterGetAsyncWithHttpInfo($token, $geo_id)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -14829,17 +14841,18 @@ class DefaultApi
     /**
      * Operation sessionRegisterGetAsyncWithHttpInfo
      *
-     * Either logs in or creates anonymous user.
+     * Either logs in or creates anonymous user. Sets geofence id if provided.
      *
      * @param  string $token (optional)
+     * @param  int $geo_id (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function sessionRegisterGetAsyncWithHttpInfo($token = null)
+    public function sessionRegisterGetAsyncWithHttpInfo($token = null, $geo_id = null)
     {
         $returnType = '\Swagger\Client\Model\User';
-        $request = $this->sessionRegisterGetRequest($token);
+        $request = $this->sessionRegisterGetRequest($token, $geo_id);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -14882,11 +14895,12 @@ class DefaultApi
      * Create request for operation 'sessionRegisterGet'
      *
      * @param  string $token (optional)
+     * @param  int $geo_id (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function sessionRegisterGetRequest($token = null)
+    protected function sessionRegisterGetRequest($token = null, $geo_id = null)
     {
 
         $resourcePath = '/session/register';
@@ -14899,6 +14913,10 @@ class DefaultApi
         // query params
         if ($token !== null) {
             $queryParams['token'] = ObjectSerializer::toQueryValue($token);
+        }
+        // query params
+        if ($geo_id !== null) {
+            $queryParams['geoId'] = ObjectSerializer::toQueryValue($geo_id);
         }
 
 

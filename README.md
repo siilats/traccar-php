@@ -144,7 +144,7 @@ Class | Method | HTTP request | Description
 *DefaultApi* | [**sessionLoginPost**](docs/Api/DefaultApi.md#sessionloginpost) | **POST** /session/login | Use admin token to log in a user without traccartoken. This deletes the anonymous user that has the token and puts the token into the user w email
 *DefaultApi* | [**sessionLogoutPost**](docs/Api/DefaultApi.md#sessionlogoutpost) | **POST** /session/logout | logout user create anon user
 *DefaultApi* | [**sessionPost**](docs/Api/DefaultApi.md#sessionpost) | **POST** /session | Create a new Session
-*DefaultApi* | [**sessionRegisterGet**](docs/Api/DefaultApi.md#sessionregisterget) | **GET** /session/register | Either logs in or creates anonymous user.
+*DefaultApi* | [**sessionRegisterGet**](docs/Api/DefaultApi.md#sessionregisterget) | **GET** /session/register | Either logs in or creates anonymous user. Sets geofence id if provided.
 *DefaultApi* | [**sessionUserdevicePost**](docs/Api/DefaultApi.md#sessionuserdevicepost) | **POST** /session/userdevice | Get data on User, Device, and Geofence
 *DefaultApi* | [**sessionUserdevicePut**](docs/Api/DefaultApi.md#sessionuserdeviceput) | **PUT** /session/userdevice | Update data on User, Device, and Geofence
 *DefaultApi* | [**statisticsGet**](docs/Api/DefaultApi.md#statisticsget) | **GET** /statistics | Fetch server Statistics
