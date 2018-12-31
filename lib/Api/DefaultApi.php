@@ -4797,13 +4797,13 @@ class DefaultApi
      * Update a Device
      *
      * @param  int $id id (required)
-     * @param  \Swagger\Client\Model\Device $body body (required)
+     * @param  \Swagger\Client\Model\Device $body body (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Swagger\Client\Model\Device
      */
-    public function devicesIdPut($id, $body)
+    public function devicesIdPut($id, $body = null)
     {
         list($response) = $this->devicesIdPutWithHttpInfo($id, $body);
         return $response;
@@ -4815,13 +4815,13 @@ class DefaultApi
      * Update a Device
      *
      * @param  int $id (required)
-     * @param  \Swagger\Client\Model\Device $body (required)
+     * @param  \Swagger\Client\Model\Device $body (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Swagger\Client\Model\Device, HTTP status code, HTTP response headers (array of strings)
      */
-    public function devicesIdPutWithHttpInfo($id, $body)
+    public function devicesIdPutWithHttpInfo($id, $body = null)
     {
         $returnType = '\Swagger\Client\Model\Device';
         $request = $this->devicesIdPutRequest($id, $body);
@@ -4891,12 +4891,12 @@ class DefaultApi
      * Update a Device
      *
      * @param  int $id (required)
-     * @param  \Swagger\Client\Model\Device $body (required)
+     * @param  \Swagger\Client\Model\Device $body (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function devicesIdPutAsync($id, $body)
+    public function devicesIdPutAsync($id, $body = null)
     {
         return $this->devicesIdPutAsyncWithHttpInfo($id, $body)
             ->then(
@@ -4912,12 +4912,12 @@ class DefaultApi
      * Update a Device
      *
      * @param  int $id (required)
-     * @param  \Swagger\Client\Model\Device $body (required)
+     * @param  \Swagger\Client\Model\Device $body (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function devicesIdPutAsyncWithHttpInfo($id, $body)
+    public function devicesIdPutAsyncWithHttpInfo($id, $body = null)
     {
         $returnType = '\Swagger\Client\Model\Device';
         $request = $this->devicesIdPutRequest($id, $body);
@@ -4963,23 +4963,17 @@ class DefaultApi
      * Create request for operation 'devicesIdPut'
      *
      * @param  int $id (required)
-     * @param  \Swagger\Client\Model\Device $body (required)
+     * @param  \Swagger\Client\Model\Device $body (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function devicesIdPutRequest($id, $body)
+    protected function devicesIdPutRequest($id, $body = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null || (is_array($id) && count($id) === 0)) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $id when calling devicesIdPut'
-            );
-        }
-        // verify the required parameter 'body' is set
-        if ($body === null || (is_array($body) && count($body) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $body when calling devicesIdPut'
             );
         }
 
@@ -5076,13 +5070,13 @@ class DefaultApi
      *
      * Create a Device
      *
-     * @param  \Swagger\Client\Model\Device $body body (required)
+     * @param  \Swagger\Client\Model\Device $body body (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Swagger\Client\Model\Device
      */
-    public function devicesPost($body)
+    public function devicesPost($body = null)
     {
         list($response) = $this->devicesPostWithHttpInfo($body);
         return $response;
@@ -5093,13 +5087,13 @@ class DefaultApi
      *
      * Create a Device
      *
-     * @param  \Swagger\Client\Model\Device $body (required)
+     * @param  \Swagger\Client\Model\Device $body (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Swagger\Client\Model\Device, HTTP status code, HTTP response headers (array of strings)
      */
-    public function devicesPostWithHttpInfo($body)
+    public function devicesPostWithHttpInfo($body = null)
     {
         $returnType = '\Swagger\Client\Model\Device';
         $request = $this->devicesPostRequest($body);
@@ -5168,12 +5162,12 @@ class DefaultApi
      *
      * Create a Device
      *
-     * @param  \Swagger\Client\Model\Device $body (required)
+     * @param  \Swagger\Client\Model\Device $body (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function devicesPostAsync($body)
+    public function devicesPostAsync($body = null)
     {
         return $this->devicesPostAsyncWithHttpInfo($body)
             ->then(
@@ -5188,12 +5182,12 @@ class DefaultApi
      *
      * Create a Device
      *
-     * @param  \Swagger\Client\Model\Device $body (required)
+     * @param  \Swagger\Client\Model\Device $body (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function devicesPostAsyncWithHttpInfo($body)
+    public function devicesPostAsyncWithHttpInfo($body = null)
     {
         $returnType = '\Swagger\Client\Model\Device';
         $request = $this->devicesPostRequest($body);
@@ -5238,19 +5232,13 @@ class DefaultApi
     /**
      * Create request for operation 'devicesPost'
      *
-     * @param  \Swagger\Client\Model\Device $body (required)
+     * @param  \Swagger\Client\Model\Device $body (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function devicesPostRequest($body)
+    protected function devicesPostRequest($body = null)
     {
-        // verify the required parameter 'body' is set
-        if ($body === null || (is_array($body) && count($body) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $body when calling devicesPost'
-            );
-        }
 
         $resourcePath = '/devices';
         $formParams = [];

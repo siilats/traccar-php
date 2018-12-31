@@ -1121,7 +1121,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**|  |
- **body** | [**\Swagger\Client\Model\Device**](../Model/Device.md)|  |
+ **body** | [**\Swagger\Client\Model\Device**](../Model/Device.md)|  | [optional]
 
 ### Return type
 
@@ -1175,7 +1175,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Swagger\Client\Model\Device**](../Model/Device.md)|  |
+ **body** | [**\Swagger\Client\Model\Device**](../Model/Device.md)|  | [optional]
 
 ### Return type
 
