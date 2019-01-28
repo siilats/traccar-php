@@ -58,8 +58,7 @@ class UserDevice implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'user' => '\Swagger\Client\Model\User',
-        'device' => '\Swagger\Client\Model\Device',
-        'geofence' => '\Swagger\Client\Model\Geofence'
+        'device' => '\Swagger\Client\Model\Device'
     ];
 
     /**
@@ -69,8 +68,7 @@ class UserDevice implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'user' => null,
-        'device' => null,
-        'geofence' => null
+        'device' => null
     ];
 
     /**
@@ -101,8 +99,7 @@ class UserDevice implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'user' => 'user',
-        'device' => 'device',
-        'geofence' => 'geofence'
+        'device' => 'device'
     ];
 
     /**
@@ -112,8 +109,7 @@ class UserDevice implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'user' => 'setUser',
-        'device' => 'setDevice',
-        'geofence' => 'setGeofence'
+        'device' => 'setDevice'
     ];
 
     /**
@@ -123,8 +119,7 @@ class UserDevice implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'user' => 'getUser',
-        'device' => 'getDevice',
-        'geofence' => 'getGeofence'
+        'device' => 'getDevice'
     ];
 
     /**
@@ -189,7 +184,6 @@ class UserDevice implements ModelInterface, ArrayAccess
     {
         $this->container['user'] = isset($data['user']) ? $data['user'] : null;
         $this->container['device'] = isset($data['device']) ? $data['device'] : null;
-        $this->container['geofence'] = isset($data['geofence']) ? $data['geofence'] : null;
     }
 
     /**
@@ -260,30 +254,6 @@ class UserDevice implements ModelInterface, ArrayAccess
     public function setDevice($device)
     {
         $this->container['device'] = $device;
-
-        return $this;
-    }
-
-    /**
-     * Gets geofence
-     *
-     * @return \Swagger\Client\Model\Geofence
-     */
-    public function getGeofence()
-    {
-        return $this->container['geofence'];
-    }
-
-    /**
-     * Sets geofence
-     *
-     * @param \Swagger\Client\Model\Geofence $geofence geofence
-     *
-     * @return $this
-     */
-    public function setGeofence($geofence)
-    {
-        $this->container['geofence'] = $geofence;
 
         return $this;
     }

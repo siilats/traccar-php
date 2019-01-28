@@ -60,9 +60,10 @@ Method | HTTP request | Description
 [**sessionLogoutPost**](DefaultApi.md#sessionLogoutPost) | **POST** /session/logout | logout user create anon user
 [**sessionPost**](DefaultApi.md#sessionPost) | **POST** /session | Create a new Session
 [**sessionRegisterGet**](DefaultApi.md#sessionRegisterGet) | **GET** /session/register | Either logs in or creates anonymous user. Sets geofence id if provided.
-[**sessionUserdevicePost**](DefaultApi.md#sessionUserdevicePost) | **POST** /session/userdevice | Get data on User, Device, and Geofence
+[**sessionUserdevicePost**](DefaultApi.md#sessionUserdevicePost) | **POST** /session/userdevice | Get data on User and Device
 [**sessionUserdevicePut**](DefaultApi.md#sessionUserdevicePut) | **PUT** /session/userdevice | Update data on User, Device, and Geofence
 [**statisticsGet**](DefaultApi.md#statisticsGet) | **GET** /statistics | Fetch server Statistics
+[**usersFilterGet**](DefaultApi.md#usersFilterGet) | **GET** /users/filter | Fetch a list of Users filtered by specific phrase
 [**usersGet**](DefaultApi.md#usersGet) | **GET** /users | Fetch a list of Users
 [**usersIdDelete**](DefaultApi.md#usersIdDelete) | **DELETE** /users/{id} | Delete a User
 [**usersIdPut**](DefaultApi.md#usersIdPut) | **PUT** /users/{id} | Update a User
@@ -3232,7 +3233,7 @@ Name | Type | Description  | Notes
 # **sessionUserdevicePost**
 > \Swagger\Client\Model\UserDevice sessionUserdevicePost($anontoken, $adminemail, $adminpassword, $bikeimei)
 
-Get data on User, Device, and Geofence
+Get data on User and Device
 
 ### Example
 ```php
@@ -3387,6 +3388,60 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**\Swagger\Client\Model\Statistics[]**](../Model/Statistics.md)
+
+### Authorization
+
+[basicAuth](../../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **usersFilterGet**
+> \Swagger\Client\Model\User[] usersFilterGet($phrase)
+
+Fetch a list of Users filtered by specific phrase
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+// Configure HTTP basic authorization: basicAuth
+$config = Swagger\Client\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
+
+
+$apiInstance = new Swagger\Client\Api\DefaultApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$phrase = "phrase_example"; // string | Can only be used by admin
+
+try {
+    $result = $apiInstance->usersFilterGet($phrase);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->usersFilterGet: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **phrase** | **string**| Can only be used by admin | [optional]
+
+### Return type
+
+[**\Swagger\Client\Model\User[]**](../Model/User.md)
 
 ### Authorization
 
