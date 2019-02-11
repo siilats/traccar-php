@@ -148,7 +148,7 @@ Class | Method | HTTP request | Description
 *DefaultApi* | [**sessionUserdevicePost**](docs/Api/DefaultApi.md#sessionuserdevicepost) | **POST** /session/userdevice | Get data on User and Device
 *DefaultApi* | [**sessionUserdevicePut**](docs/Api/DefaultApi.md#sessionuserdeviceput) | **PUT** /session/userdevice | Update data on User, Device, and Geofence
 *DefaultApi* | [**statisticsGet**](docs/Api/DefaultApi.md#statisticsget) | **GET** /statistics | Fetch server Statistics
-*DefaultApi* | [**usersFilterGet**](docs/Api/DefaultApi.md#usersfilterget) | **GET** /users/filter | Fetch a list of Users filtered by specific phrase
+*DefaultApi* | [**usersFilterGet**](docs/Api/DefaultApi.md#usersfilterget) | **GET** /users/filter | Fetch a list of Users filtered by specific email
 *DefaultApi* | [**usersGet**](docs/Api/DefaultApi.md#usersget) | **GET** /users | Fetch a list of Users
 *DefaultApi* | [**usersIdDelete**](docs/Api/DefaultApi.md#usersiddelete) | **DELETE** /users/{id} | Delete a User
 *DefaultApi* | [**usersIdPut**](docs/Api/DefaultApi.md#usersidput) | **PUT** /users/{id} | Update a User

@@ -4045,14 +4045,15 @@ class DefaultApi
      * @param  int $user_id Standard users can use this only with their own _userId_ (optional)
      * @param  int $id To fetch one or more devices. Multiple params can be passed like &#x60;id&#x3D;31&amp;id&#x3D;42&#x60; (optional)
      * @param  string $unique_id To fetch one or more devices. Multiple params can be passed like &#x60;uniqueId&#x3D;333331&amp;uniqieId&#x3D;44442&#x60; (optional)
+     * @param  string $geo_id Get devices inside geofences with these ids, i.e. geoId&#x3D;1,2,3 (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Swagger\Client\Model\Device[]
      */
-    public function devicesGet($all = null, $user_id = null, $id = null, $unique_id = null)
+    public function devicesGet($all = null, $user_id = null, $id = null, $unique_id = null, $geo_id = null)
     {
-        list($response) = $this->devicesGetWithHttpInfo($all, $user_id, $id, $unique_id);
+        list($response) = $this->devicesGetWithHttpInfo($all, $user_id, $id, $unique_id, $geo_id);
         return $response;
     }
 
@@ -4065,15 +4066,16 @@ class DefaultApi
      * @param  int $user_id Standard users can use this only with their own _userId_ (optional)
      * @param  int $id To fetch one or more devices. Multiple params can be passed like &#x60;id&#x3D;31&amp;id&#x3D;42&#x60; (optional)
      * @param  string $unique_id To fetch one or more devices. Multiple params can be passed like &#x60;uniqueId&#x3D;333331&amp;uniqieId&#x3D;44442&#x60; (optional)
+     * @param  string $geo_id Get devices inside geofences with these ids, i.e. geoId&#x3D;1,2,3 (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Swagger\Client\Model\Device[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function devicesGetWithHttpInfo($all = null, $user_id = null, $id = null, $unique_id = null)
+    public function devicesGetWithHttpInfo($all = null, $user_id = null, $id = null, $unique_id = null, $geo_id = null)
     {
         $returnType = '\Swagger\Client\Model\Device[]';
-        $request = $this->devicesGetRequest($all, $user_id, $id, $unique_id);
+        $request = $this->devicesGetRequest($all, $user_id, $id, $unique_id, $geo_id);
 
         try {
             $options = $this->createHttpClientOption();
@@ -4143,13 +4145,14 @@ class DefaultApi
      * @param  int $user_id Standard users can use this only with their own _userId_ (optional)
      * @param  int $id To fetch one or more devices. Multiple params can be passed like &#x60;id&#x3D;31&amp;id&#x3D;42&#x60; (optional)
      * @param  string $unique_id To fetch one or more devices. Multiple params can be passed like &#x60;uniqueId&#x3D;333331&amp;uniqieId&#x3D;44442&#x60; (optional)
+     * @param  string $geo_id Get devices inside geofences with these ids, i.e. geoId&#x3D;1,2,3 (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function devicesGetAsync($all = null, $user_id = null, $id = null, $unique_id = null)
+    public function devicesGetAsync($all = null, $user_id = null, $id = null, $unique_id = null, $geo_id = null)
     {
-        return $this->devicesGetAsyncWithHttpInfo($all, $user_id, $id, $unique_id)
+        return $this->devicesGetAsyncWithHttpInfo($all, $user_id, $id, $unique_id, $geo_id)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -4166,14 +4169,15 @@ class DefaultApi
      * @param  int $user_id Standard users can use this only with their own _userId_ (optional)
      * @param  int $id To fetch one or more devices. Multiple params can be passed like &#x60;id&#x3D;31&amp;id&#x3D;42&#x60; (optional)
      * @param  string $unique_id To fetch one or more devices. Multiple params can be passed like &#x60;uniqueId&#x3D;333331&amp;uniqieId&#x3D;44442&#x60; (optional)
+     * @param  string $geo_id Get devices inside geofences with these ids, i.e. geoId&#x3D;1,2,3 (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function devicesGetAsyncWithHttpInfo($all = null, $user_id = null, $id = null, $unique_id = null)
+    public function devicesGetAsyncWithHttpInfo($all = null, $user_id = null, $id = null, $unique_id = null, $geo_id = null)
     {
         $returnType = '\Swagger\Client\Model\Device[]';
-        $request = $this->devicesGetRequest($all, $user_id, $id, $unique_id);
+        $request = $this->devicesGetRequest($all, $user_id, $id, $unique_id, $geo_id);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -4219,11 +4223,12 @@ class DefaultApi
      * @param  int $user_id Standard users can use this only with their own _userId_ (optional)
      * @param  int $id To fetch one or more devices. Multiple params can be passed like &#x60;id&#x3D;31&amp;id&#x3D;42&#x60; (optional)
      * @param  string $unique_id To fetch one or more devices. Multiple params can be passed like &#x60;uniqueId&#x3D;333331&amp;uniqieId&#x3D;44442&#x60; (optional)
+     * @param  string $geo_id Get devices inside geofences with these ids, i.e. geoId&#x3D;1,2,3 (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function devicesGetRequest($all = null, $user_id = null, $id = null, $unique_id = null)
+    protected function devicesGetRequest($all = null, $user_id = null, $id = null, $unique_id = null, $geo_id = null)
     {
 
         $resourcePath = '/devices';
@@ -4248,6 +4253,10 @@ class DefaultApi
         // query params
         if ($unique_id !== null) {
             $queryParams['uniqueId'] = ObjectSerializer::toQueryValue($unique_id);
+        }
+        // query params
+        if ($geo_id !== null) {
+            $queryParams['geoId'] = ObjectSerializer::toQueryValue($geo_id);
         }
 
 
@@ -15818,35 +15827,35 @@ class DefaultApi
     /**
      * Operation usersFilterGet
      *
-     * Fetch a list of Users filtered by specific phrase
+     * Fetch a list of Users filtered by specific email
      *
-     * @param  string $phrase Can only be used by admin (optional)
+     * @param  string $email Can only be used by admin (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Swagger\Client\Model\User[]
      */
-    public function usersFilterGet($phrase = null)
+    public function usersFilterGet($email = null)
     {
-        list($response) = $this->usersFilterGetWithHttpInfo($phrase);
+        list($response) = $this->usersFilterGetWithHttpInfo($email);
         return $response;
     }
 
     /**
      * Operation usersFilterGetWithHttpInfo
      *
-     * Fetch a list of Users filtered by specific phrase
+     * Fetch a list of Users filtered by specific email
      *
-     * @param  string $phrase Can only be used by admin (optional)
+     * @param  string $email Can only be used by admin (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Swagger\Client\Model\User[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function usersFilterGetWithHttpInfo($phrase = null)
+    public function usersFilterGetWithHttpInfo($email = null)
     {
         $returnType = '\Swagger\Client\Model\User[]';
-        $request = $this->usersFilterGetRequest($phrase);
+        $request = $this->usersFilterGetRequest($email);
 
         try {
             $options = $this->createHttpClientOption();
@@ -15910,16 +15919,16 @@ class DefaultApi
     /**
      * Operation usersFilterGetAsync
      *
-     * Fetch a list of Users filtered by specific phrase
+     * Fetch a list of Users filtered by specific email
      *
-     * @param  string $phrase Can only be used by admin (optional)
+     * @param  string $email Can only be used by admin (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function usersFilterGetAsync($phrase = null)
+    public function usersFilterGetAsync($email = null)
     {
-        return $this->usersFilterGetAsyncWithHttpInfo($phrase)
+        return $this->usersFilterGetAsyncWithHttpInfo($email)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -15930,17 +15939,17 @@ class DefaultApi
     /**
      * Operation usersFilterGetAsyncWithHttpInfo
      *
-     * Fetch a list of Users filtered by specific phrase
+     * Fetch a list of Users filtered by specific email
      *
-     * @param  string $phrase Can only be used by admin (optional)
+     * @param  string $email Can only be used by admin (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function usersFilterGetAsyncWithHttpInfo($phrase = null)
+    public function usersFilterGetAsyncWithHttpInfo($email = null)
     {
         $returnType = '\Swagger\Client\Model\User[]';
-        $request = $this->usersFilterGetRequest($phrase);
+        $request = $this->usersFilterGetRequest($email);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -15982,12 +15991,12 @@ class DefaultApi
     /**
      * Create request for operation 'usersFilterGet'
      *
-     * @param  string $phrase Can only be used by admin (optional)
+     * @param  string $email Can only be used by admin (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function usersFilterGetRequest($phrase = null)
+    protected function usersFilterGetRequest($email = null)
     {
 
         $resourcePath = '/users/filter';
@@ -15998,8 +16007,8 @@ class DefaultApi
         $multipart = false;
 
         // query params
-        if ($phrase !== null) {
-            $queryParams['phrase'] = ObjectSerializer::toQueryValue($phrase);
+        if ($email !== null) {
+            $queryParams['email'] = ObjectSerializer::toQueryValue($email);
         }
 
 

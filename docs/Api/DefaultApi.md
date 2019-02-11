@@ -63,7 +63,7 @@ Method | HTTP request | Description
 [**sessionUserdevicePost**](DefaultApi.md#sessionUserdevicePost) | **POST** /session/userdevice | Get data on User and Device
 [**sessionUserdevicePut**](DefaultApi.md#sessionUserdevicePut) | **PUT** /session/userdevice | Update data on User, Device, and Geofence
 [**statisticsGet**](DefaultApi.md#statisticsGet) | **GET** /statistics | Fetch server Statistics
-[**usersFilterGet**](DefaultApi.md#usersFilterGet) | **GET** /users/filter | Fetch a list of Users filtered by specific phrase
+[**usersFilterGet**](DefaultApi.md#usersFilterGet) | **GET** /users/filter | Fetch a list of Users filtered by specific email
 [**usersGet**](DefaultApi.md#usersGet) | **GET** /users | Fetch a list of Users
 [**usersIdDelete**](DefaultApi.md#usersIdDelete) | **DELETE** /users/{id} | Delete a User
 [**usersIdPut**](DefaultApi.md#usersIdPut) | **PUT** /users/{id} | Update a User
@@ -914,7 +914,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **devicesGet**
-> \Swagger\Client\Model\Device[] devicesGet($all, $user_id, $id, $unique_id)
+> \Swagger\Client\Model\Device[] devicesGet($all, $user_id, $id, $unique_id, $geo_id)
 
 Fetch a list of Devices
 
@@ -941,9 +941,10 @@ $all = true; // bool | Can only be used by admins or managers to fetch all entit
 $user_id = 56; // int | Standard users can use this only with their own _userId_
 $id = 56; // int | To fetch one or more devices. Multiple params can be passed like `id=31&id=42`
 $unique_id = "unique_id_example"; // string | To fetch one or more devices. Multiple params can be passed like `uniqueId=333331&uniqieId=44442`
+$geo_id = "geo_id_example"; // string | Get devices inside geofences with these ids, i.e. geoId=1,2,3
 
 try {
-    $result = $apiInstance->devicesGet($all, $user_id, $id, $unique_id);
+    $result = $apiInstance->devicesGet($all, $user_id, $id, $unique_id, $geo_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->devicesGet: ', $e->getMessage(), PHP_EOL;
@@ -959,6 +960,7 @@ Name | Type | Description  | Notes
  **user_id** | **int**| Standard users can use this only with their own _userId_ | [optional]
  **id** | **int**| To fetch one or more devices. Multiple params can be passed like &#x60;id&#x3D;31&amp;id&#x3D;42&#x60; | [optional]
  **unique_id** | **string**| To fetch one or more devices. Multiple params can be passed like &#x60;uniqueId&#x3D;333331&amp;uniqieId&#x3D;44442&#x60; | [optional]
+ **geo_id** | **string**| Get devices inside geofences with these ids, i.e. geoId&#x3D;1,2,3 | [optional]
 
 ### Return type
 
@@ -3401,9 +3403,9 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **usersFilterGet**
-> \Swagger\Client\Model\User[] usersFilterGet($phrase)
+> \Swagger\Client\Model\User[] usersFilterGet($email)
 
-Fetch a list of Users filtered by specific phrase
+Fetch a list of Users filtered by specific email
 
 ### Example
 ```php
@@ -3422,10 +3424,10 @@ $apiInstance = new Swagger\Client\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
-$phrase = "phrase_example"; // string | Can only be used by admin
+$email = "email_example"; // string | Can only be used by admin
 
 try {
-    $result = $apiInstance->usersFilterGet($phrase);
+    $result = $apiInstance->usersFilterGet($email);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->usersFilterGet: ', $e->getMessage(), PHP_EOL;
@@ -3437,7 +3439,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **phrase** | **string**| Can only be used by admin | [optional]
+ **email** | **string**| Can only be used by admin | [optional]
 
 ### Return type
 
