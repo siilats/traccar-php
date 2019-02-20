@@ -4045,15 +4045,16 @@ class DefaultApi
      * @param  int $user_id Standard users can use this only with their own _userId_ (optional)
      * @param  int $id To fetch one or more devices. Multiple params can be passed like &#x60;id&#x3D;31&amp;id&#x3D;42&#x60; (optional)
      * @param  string $unique_id To fetch one or more devices. Multiple params can be passed like &#x60;uniqueId&#x3D;333331&amp;uniqieId&#x3D;44442&#x60; (optional)
-     * @param  string $geo_id Get devices inside geofences with these ids, i.e. geoId&#x3D;1,2,3 (optional)
+     * @param  int $geo_id Get devices inside geofences with these ids. Multiple params like &#x60;geoId&#x3D;1&amp;geoId&#x3D;2&#x60; (optional)
+     * @param  string $model To fetch one or more devices. Multiple params can be passed like &#x60;model&#x3D;111-222&amp;model&#x3D;333-444&#x60; (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Swagger\Client\Model\Device[]
      */
-    public function devicesGet($all = null, $user_id = null, $id = null, $unique_id = null, $geo_id = null)
+    public function devicesGet($all = null, $user_id = null, $id = null, $unique_id = null, $geo_id = null, $model = null)
     {
-        list($response) = $this->devicesGetWithHttpInfo($all, $user_id, $id, $unique_id, $geo_id);
+        list($response) = $this->devicesGetWithHttpInfo($all, $user_id, $id, $unique_id, $geo_id, $model);
         return $response;
     }
 
@@ -4066,16 +4067,17 @@ class DefaultApi
      * @param  int $user_id Standard users can use this only with their own _userId_ (optional)
      * @param  int $id To fetch one or more devices. Multiple params can be passed like &#x60;id&#x3D;31&amp;id&#x3D;42&#x60; (optional)
      * @param  string $unique_id To fetch one or more devices. Multiple params can be passed like &#x60;uniqueId&#x3D;333331&amp;uniqieId&#x3D;44442&#x60; (optional)
-     * @param  string $geo_id Get devices inside geofences with these ids, i.e. geoId&#x3D;1,2,3 (optional)
+     * @param  int $geo_id Get devices inside geofences with these ids. Multiple params like &#x60;geoId&#x3D;1&amp;geoId&#x3D;2&#x60; (optional)
+     * @param  string $model To fetch one or more devices. Multiple params can be passed like &#x60;model&#x3D;111-222&amp;model&#x3D;333-444&#x60; (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Swagger\Client\Model\Device[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function devicesGetWithHttpInfo($all = null, $user_id = null, $id = null, $unique_id = null, $geo_id = null)
+    public function devicesGetWithHttpInfo($all = null, $user_id = null, $id = null, $unique_id = null, $geo_id = null, $model = null)
     {
         $returnType = '\Swagger\Client\Model\Device[]';
-        $request = $this->devicesGetRequest($all, $user_id, $id, $unique_id, $geo_id);
+        $request = $this->devicesGetRequest($all, $user_id, $id, $unique_id, $geo_id, $model);
 
         try {
             $options = $this->createHttpClientOption();
@@ -4145,14 +4147,15 @@ class DefaultApi
      * @param  int $user_id Standard users can use this only with their own _userId_ (optional)
      * @param  int $id To fetch one or more devices. Multiple params can be passed like &#x60;id&#x3D;31&amp;id&#x3D;42&#x60; (optional)
      * @param  string $unique_id To fetch one or more devices. Multiple params can be passed like &#x60;uniqueId&#x3D;333331&amp;uniqieId&#x3D;44442&#x60; (optional)
-     * @param  string $geo_id Get devices inside geofences with these ids, i.e. geoId&#x3D;1,2,3 (optional)
+     * @param  int $geo_id Get devices inside geofences with these ids. Multiple params like &#x60;geoId&#x3D;1&amp;geoId&#x3D;2&#x60; (optional)
+     * @param  string $model To fetch one or more devices. Multiple params can be passed like &#x60;model&#x3D;111-222&amp;model&#x3D;333-444&#x60; (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function devicesGetAsync($all = null, $user_id = null, $id = null, $unique_id = null, $geo_id = null)
+    public function devicesGetAsync($all = null, $user_id = null, $id = null, $unique_id = null, $geo_id = null, $model = null)
     {
-        return $this->devicesGetAsyncWithHttpInfo($all, $user_id, $id, $unique_id, $geo_id)
+        return $this->devicesGetAsyncWithHttpInfo($all, $user_id, $id, $unique_id, $geo_id, $model)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -4169,15 +4172,16 @@ class DefaultApi
      * @param  int $user_id Standard users can use this only with their own _userId_ (optional)
      * @param  int $id To fetch one or more devices. Multiple params can be passed like &#x60;id&#x3D;31&amp;id&#x3D;42&#x60; (optional)
      * @param  string $unique_id To fetch one or more devices. Multiple params can be passed like &#x60;uniqueId&#x3D;333331&amp;uniqieId&#x3D;44442&#x60; (optional)
-     * @param  string $geo_id Get devices inside geofences with these ids, i.e. geoId&#x3D;1,2,3 (optional)
+     * @param  int $geo_id Get devices inside geofences with these ids. Multiple params like &#x60;geoId&#x3D;1&amp;geoId&#x3D;2&#x60; (optional)
+     * @param  string $model To fetch one or more devices. Multiple params can be passed like &#x60;model&#x3D;111-222&amp;model&#x3D;333-444&#x60; (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function devicesGetAsyncWithHttpInfo($all = null, $user_id = null, $id = null, $unique_id = null, $geo_id = null)
+    public function devicesGetAsyncWithHttpInfo($all = null, $user_id = null, $id = null, $unique_id = null, $geo_id = null, $model = null)
     {
         $returnType = '\Swagger\Client\Model\Device[]';
-        $request = $this->devicesGetRequest($all, $user_id, $id, $unique_id, $geo_id);
+        $request = $this->devicesGetRequest($all, $user_id, $id, $unique_id, $geo_id, $model);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -4223,12 +4227,13 @@ class DefaultApi
      * @param  int $user_id Standard users can use this only with their own _userId_ (optional)
      * @param  int $id To fetch one or more devices. Multiple params can be passed like &#x60;id&#x3D;31&amp;id&#x3D;42&#x60; (optional)
      * @param  string $unique_id To fetch one or more devices. Multiple params can be passed like &#x60;uniqueId&#x3D;333331&amp;uniqieId&#x3D;44442&#x60; (optional)
-     * @param  string $geo_id Get devices inside geofences with these ids, i.e. geoId&#x3D;1,2,3 (optional)
+     * @param  int $geo_id Get devices inside geofences with these ids. Multiple params like &#x60;geoId&#x3D;1&amp;geoId&#x3D;2&#x60; (optional)
+     * @param  string $model To fetch one or more devices. Multiple params can be passed like &#x60;model&#x3D;111-222&amp;model&#x3D;333-444&#x60; (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function devicesGetRequest($all = null, $user_id = null, $id = null, $unique_id = null, $geo_id = null)
+    protected function devicesGetRequest($all = null, $user_id = null, $id = null, $unique_id = null, $geo_id = null, $model = null)
     {
 
         $resourcePath = '/devices';
@@ -4257,6 +4262,10 @@ class DefaultApi
         // query params
         if ($geo_id !== null) {
             $queryParams['geoId'] = ObjectSerializer::toQueryValue($geo_id);
+        }
+        // query params
+        if ($model !== null) {
+            $queryParams['model'] = ObjectSerializer::toQueryValue($model);
         }
 
 

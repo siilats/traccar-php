@@ -914,7 +914,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **devicesGet**
-> \Swagger\Client\Model\Device[] devicesGet($all, $user_id, $id, $unique_id, $geo_id)
+> \Swagger\Client\Model\Device[] devicesGet($all, $user_id, $id, $unique_id, $geo_id, $model)
 
 Fetch a list of Devices
 
@@ -941,10 +941,11 @@ $all = true; // bool | Can only be used by admins or managers to fetch all entit
 $user_id = 56; // int | Standard users can use this only with their own _userId_
 $id = 56; // int | To fetch one or more devices. Multiple params can be passed like `id=31&id=42`
 $unique_id = "unique_id_example"; // string | To fetch one or more devices. Multiple params can be passed like `uniqueId=333331&uniqieId=44442`
-$geo_id = "geo_id_example"; // string | Get devices inside geofences with these ids, i.e. geoId=1,2,3
+$geo_id = 56; // int | Get devices inside geofences with these ids. Multiple params like `geoId=1&geoId=2`
+$model = "model_example"; // string | To fetch one or more devices. Multiple params can be passed like `model=111-222&model=333-444`
 
 try {
-    $result = $apiInstance->devicesGet($all, $user_id, $id, $unique_id, $geo_id);
+    $result = $apiInstance->devicesGet($all, $user_id, $id, $unique_id, $geo_id, $model);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->devicesGet: ', $e->getMessage(), PHP_EOL;
@@ -960,7 +961,8 @@ Name | Type | Description  | Notes
  **user_id** | **int**| Standard users can use this only with their own _userId_ | [optional]
  **id** | **int**| To fetch one or more devices. Multiple params can be passed like &#x60;id&#x3D;31&amp;id&#x3D;42&#x60; | [optional]
  **unique_id** | **string**| To fetch one or more devices. Multiple params can be passed like &#x60;uniqueId&#x3D;333331&amp;uniqieId&#x3D;44442&#x60; | [optional]
- **geo_id** | **string**| Get devices inside geofences with these ids, i.e. geoId&#x3D;1,2,3 | [optional]
+ **geo_id** | **int**| Get devices inside geofences with these ids. Multiple params like &#x60;geoId&#x3D;1&amp;geoId&#x3D;2&#x60; | [optional]
+ **model** | **string**| To fetch one or more devices. Multiple params can be passed like &#x60;model&#x3D;111-222&amp;model&#x3D;333-444&#x60; | [optional]
 
 ### Return type
 
