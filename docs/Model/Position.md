@@ -20,6 +20,16 @@ Name | Type | Description | Notes
 **accuracy** | **float** |  | [optional] 
 **network** | [**\Swagger\Client\Model\Network**](Network.md) |  | [optional] 
 **additional_properties** | **string** |  | [optional] 
+**position_type** | **string** |  | [optional] 
+**motion** | **bool** |  | [optional] 
+**rented** | **int** |  | [optional] 
+**battery_level** | **float** |  | [optional] 
+**distance** | **float** |  | [optional] 
+**total_distance** | **float** |  | [optional] 
+**ip** | **string** |  | [optional] 
+**qr** | **string** |  | [optional] 
+**battery** | **int** |  | [optional] 
+**ride_start** | [**\DateTime**](\DateTime.md) |  | [optional] 
 **attributes** | **map[string,string]** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -64,6 +64,13 @@ class Device implements ModelInterface, ArrayAccess
         'disabled' => 'bool',
         'last_update' => '\DateTime',
         'position_id' => 'int',
+        'rented' => 'int',
+        'battery_level' => 'float',
+        'distance' => 'float',
+        'total_distance' => 'float',
+        'ip' => 'string',
+        'qr' => 'string',
+        'battery' => 'int',
         'group_id' => 'int',
         'phone' => 'string',
         'model' => 'string',
@@ -86,6 +93,13 @@ class Device implements ModelInterface, ArrayAccess
         'disabled' => null,
         'last_update' => 'date-time',
         'position_id' => null,
+        'rented' => null,
+        'battery_level' => null,
+        'distance' => null,
+        'total_distance' => null,
+        'ip' => null,
+        'qr' => null,
+        'battery' => null,
         'group_id' => null,
         'phone' => null,
         'model' => null,
@@ -129,6 +143,13 @@ class Device implements ModelInterface, ArrayAccess
         'disabled' => 'disabled',
         'last_update' => 'lastUpdate',
         'position_id' => 'positionId',
+        'rented' => 'rented',
+        'battery_level' => 'batteryLevel',
+        'distance' => 'distance',
+        'total_distance' => 'totalDistance',
+        'ip' => 'ip',
+        'qr' => 'qr',
+        'battery' => 'battery',
         'group_id' => 'groupId',
         'phone' => 'phone',
         'model' => 'model',
@@ -151,6 +172,13 @@ class Device implements ModelInterface, ArrayAccess
         'disabled' => 'setDisabled',
         'last_update' => 'setLastUpdate',
         'position_id' => 'setPositionId',
+        'rented' => 'setRented',
+        'battery_level' => 'setBatteryLevel',
+        'distance' => 'setDistance',
+        'total_distance' => 'setTotalDistance',
+        'ip' => 'setIp',
+        'qr' => 'setQr',
+        'battery' => 'setBattery',
         'group_id' => 'setGroupId',
         'phone' => 'setPhone',
         'model' => 'setModel',
@@ -173,6 +201,13 @@ class Device implements ModelInterface, ArrayAccess
         'disabled' => 'getDisabled',
         'last_update' => 'getLastUpdate',
         'position_id' => 'getPositionId',
+        'rented' => 'getRented',
+        'battery_level' => 'getBatteryLevel',
+        'distance' => 'getDistance',
+        'total_distance' => 'getTotalDistance',
+        'ip' => 'getIp',
+        'qr' => 'getQr',
+        'battery' => 'getBattery',
         'group_id' => 'getGroupId',
         'phone' => 'getPhone',
         'model' => 'getModel',
@@ -249,6 +284,13 @@ class Device implements ModelInterface, ArrayAccess
         $this->container['disabled'] = isset($data['disabled']) ? $data['disabled'] : null;
         $this->container['last_update'] = isset($data['last_update']) ? $data['last_update'] : null;
         $this->container['position_id'] = isset($data['position_id']) ? $data['position_id'] : null;
+        $this->container['rented'] = isset($data['rented']) ? $data['rented'] : null;
+        $this->container['battery_level'] = isset($data['battery_level']) ? $data['battery_level'] : null;
+        $this->container['distance'] = isset($data['distance']) ? $data['distance'] : null;
+        $this->container['total_distance'] = isset($data['total_distance']) ? $data['total_distance'] : null;
+        $this->container['ip'] = isset($data['ip']) ? $data['ip'] : null;
+        $this->container['qr'] = isset($data['qr']) ? $data['qr'] : null;
+        $this->container['battery'] = isset($data['battery']) ? $data['battery'] : null;
         $this->container['group_id'] = isset($data['group_id']) ? $data['group_id'] : null;
         $this->container['phone'] = isset($data['phone']) ? $data['phone'] : null;
         $this->container['model'] = isset($data['model']) ? $data['model'] : null;
@@ -446,6 +488,174 @@ class Device implements ModelInterface, ArrayAccess
     public function setPositionId($position_id)
     {
         $this->container['position_id'] = $position_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets rented
+     *
+     * @return int
+     */
+    public function getRented()
+    {
+        return $this->container['rented'];
+    }
+
+    /**
+     * Sets rented
+     *
+     * @param int $rented rented
+     *
+     * @return $this
+     */
+    public function setRented($rented)
+    {
+        $this->container['rented'] = $rented;
+
+        return $this;
+    }
+
+    /**
+     * Gets battery_level
+     *
+     * @return float
+     */
+    public function getBatteryLevel()
+    {
+        return $this->container['battery_level'];
+    }
+
+    /**
+     * Sets battery_level
+     *
+     * @param float $battery_level battery_level
+     *
+     * @return $this
+     */
+    public function setBatteryLevel($battery_level)
+    {
+        $this->container['battery_level'] = $battery_level;
+
+        return $this;
+    }
+
+    /**
+     * Gets distance
+     *
+     * @return float
+     */
+    public function getDistance()
+    {
+        return $this->container['distance'];
+    }
+
+    /**
+     * Sets distance
+     *
+     * @param float $distance distance
+     *
+     * @return $this
+     */
+    public function setDistance($distance)
+    {
+        $this->container['distance'] = $distance;
+
+        return $this;
+    }
+
+    /**
+     * Gets total_distance
+     *
+     * @return float
+     */
+    public function getTotalDistance()
+    {
+        return $this->container['total_distance'];
+    }
+
+    /**
+     * Sets total_distance
+     *
+     * @param float $total_distance total_distance
+     *
+     * @return $this
+     */
+    public function setTotalDistance($total_distance)
+    {
+        $this->container['total_distance'] = $total_distance;
+
+        return $this;
+    }
+
+    /**
+     * Gets ip
+     *
+     * @return string
+     */
+    public function getIp()
+    {
+        return $this->container['ip'];
+    }
+
+    /**
+     * Sets ip
+     *
+     * @param string $ip ip
+     *
+     * @return $this
+     */
+    public function setIp($ip)
+    {
+        $this->container['ip'] = $ip;
+
+        return $this;
+    }
+
+    /**
+     * Gets qr
+     *
+     * @return string
+     */
+    public function getQr()
+    {
+        return $this->container['qr'];
+    }
+
+    /**
+     * Sets qr
+     *
+     * @param string $qr qr
+     *
+     * @return $this
+     */
+    public function setQr($qr)
+    {
+        $this->container['qr'] = $qr;
+
+        return $this;
+    }
+
+    /**
+     * Gets battery
+     *
+     * @return int
+     */
+    public function getBattery()
+    {
+        return $this->container['battery'];
+    }
+
+    /**
+     * Sets battery
+     *
+     * @param int $battery battery
+     *
+     * @return $this
+     */
+    public function setBattery($battery)
+    {
+        $this->container['battery'] = $battery;
 
         return $this;
     }

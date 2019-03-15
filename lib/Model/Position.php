@@ -74,6 +74,16 @@ class Position implements ModelInterface, ArrayAccess
         'accuracy' => 'float',
         'network' => '\Swagger\Client\Model\Network',
         'additional_properties' => 'string',
+        'position_type' => 'string',
+        'motion' => 'bool',
+        'rented' => 'int',
+        'battery_level' => 'float',
+        'distance' => 'float',
+        'total_distance' => 'float',
+        'ip' => 'string',
+        'qr' => 'string',
+        'battery' => 'int',
+        'ride_start' => '\DateTime',
         'attributes' => 'map[string,string]'
     ];
 
@@ -100,6 +110,16 @@ class Position implements ModelInterface, ArrayAccess
         'accuracy' => null,
         'network' => null,
         'additional_properties' => null,
+        'position_type' => null,
+        'motion' => null,
+        'rented' => null,
+        'battery_level' => null,
+        'distance' => null,
+        'total_distance' => null,
+        'ip' => null,
+        'qr' => null,
+        'battery' => null,
+        'ride_start' => 'date-time',
         'attributes' => null
     ];
 
@@ -147,6 +167,16 @@ class Position implements ModelInterface, ArrayAccess
         'accuracy' => 'accuracy',
         'network' => 'network',
         'additional_properties' => 'additionalProperties',
+        'position_type' => 'positionType',
+        'motion' => 'motion',
+        'rented' => 'rented',
+        'battery_level' => 'batteryLevel',
+        'distance' => 'distance',
+        'total_distance' => 'totalDistance',
+        'ip' => 'ip',
+        'qr' => 'qr',
+        'battery' => 'battery',
+        'ride_start' => 'ride_start',
         'attributes' => 'attributes'
     ];
 
@@ -173,6 +203,16 @@ class Position implements ModelInterface, ArrayAccess
         'accuracy' => 'setAccuracy',
         'network' => 'setNetwork',
         'additional_properties' => 'setAdditionalProperties',
+        'position_type' => 'setPositionType',
+        'motion' => 'setMotion',
+        'rented' => 'setRented',
+        'battery_level' => 'setBatteryLevel',
+        'distance' => 'setDistance',
+        'total_distance' => 'setTotalDistance',
+        'ip' => 'setIp',
+        'qr' => 'setQr',
+        'battery' => 'setBattery',
+        'ride_start' => 'setRideStart',
         'attributes' => 'setAttributes'
     ];
 
@@ -199,6 +239,16 @@ class Position implements ModelInterface, ArrayAccess
         'accuracy' => 'getAccuracy',
         'network' => 'getNetwork',
         'additional_properties' => 'getAdditionalProperties',
+        'position_type' => 'getPositionType',
+        'motion' => 'getMotion',
+        'rented' => 'getRented',
+        'battery_level' => 'getBatteryLevel',
+        'distance' => 'getDistance',
+        'total_distance' => 'getTotalDistance',
+        'ip' => 'getIp',
+        'qr' => 'getQr',
+        'battery' => 'getBattery',
+        'ride_start' => 'getRideStart',
         'attributes' => 'getAttributes'
     ];
 
@@ -279,6 +329,16 @@ class Position implements ModelInterface, ArrayAccess
         $this->container['accuracy'] = isset($data['accuracy']) ? $data['accuracy'] : null;
         $this->container['network'] = isset($data['network']) ? $data['network'] : null;
         $this->container['additional_properties'] = isset($data['additional_properties']) ? $data['additional_properties'] : null;
+        $this->container['position_type'] = isset($data['position_type']) ? $data['position_type'] : null;
+        $this->container['motion'] = isset($data['motion']) ? $data['motion'] : null;
+        $this->container['rented'] = isset($data['rented']) ? $data['rented'] : null;
+        $this->container['battery_level'] = isset($data['battery_level']) ? $data['battery_level'] : null;
+        $this->container['distance'] = isset($data['distance']) ? $data['distance'] : null;
+        $this->container['total_distance'] = isset($data['total_distance']) ? $data['total_distance'] : null;
+        $this->container['ip'] = isset($data['ip']) ? $data['ip'] : null;
+        $this->container['qr'] = isset($data['qr']) ? $data['qr'] : null;
+        $this->container['battery'] = isset($data['battery']) ? $data['battery'] : null;
+        $this->container['ride_start'] = isset($data['ride_start']) ? $data['ride_start'] : null;
         $this->container['attributes'] = isset($data['attributes']) ? $data['attributes'] : null;
     }
 
@@ -710,6 +770,246 @@ class Position implements ModelInterface, ArrayAccess
     public function setAdditionalProperties($additional_properties)
     {
         $this->container['additional_properties'] = $additional_properties;
+
+        return $this;
+    }
+
+    /**
+     * Gets position_type
+     *
+     * @return string
+     */
+    public function getPositionType()
+    {
+        return $this->container['position_type'];
+    }
+
+    /**
+     * Sets position_type
+     *
+     * @param string $position_type position_type
+     *
+     * @return $this
+     */
+    public function setPositionType($position_type)
+    {
+        $this->container['position_type'] = $position_type;
+
+        return $this;
+    }
+
+    /**
+     * Gets motion
+     *
+     * @return bool
+     */
+    public function getMotion()
+    {
+        return $this->container['motion'];
+    }
+
+    /**
+     * Sets motion
+     *
+     * @param bool $motion motion
+     *
+     * @return $this
+     */
+    public function setMotion($motion)
+    {
+        $this->container['motion'] = $motion;
+
+        return $this;
+    }
+
+    /**
+     * Gets rented
+     *
+     * @return int
+     */
+    public function getRented()
+    {
+        return $this->container['rented'];
+    }
+
+    /**
+     * Sets rented
+     *
+     * @param int $rented rented
+     *
+     * @return $this
+     */
+    public function setRented($rented)
+    {
+        $this->container['rented'] = $rented;
+
+        return $this;
+    }
+
+    /**
+     * Gets battery_level
+     *
+     * @return float
+     */
+    public function getBatteryLevel()
+    {
+        return $this->container['battery_level'];
+    }
+
+    /**
+     * Sets battery_level
+     *
+     * @param float $battery_level battery_level
+     *
+     * @return $this
+     */
+    public function setBatteryLevel($battery_level)
+    {
+        $this->container['battery_level'] = $battery_level;
+
+        return $this;
+    }
+
+    /**
+     * Gets distance
+     *
+     * @return float
+     */
+    public function getDistance()
+    {
+        return $this->container['distance'];
+    }
+
+    /**
+     * Sets distance
+     *
+     * @param float $distance distance
+     *
+     * @return $this
+     */
+    public function setDistance($distance)
+    {
+        $this->container['distance'] = $distance;
+
+        return $this;
+    }
+
+    /**
+     * Gets total_distance
+     *
+     * @return float
+     */
+    public function getTotalDistance()
+    {
+        return $this->container['total_distance'];
+    }
+
+    /**
+     * Sets total_distance
+     *
+     * @param float $total_distance total_distance
+     *
+     * @return $this
+     */
+    public function setTotalDistance($total_distance)
+    {
+        $this->container['total_distance'] = $total_distance;
+
+        return $this;
+    }
+
+    /**
+     * Gets ip
+     *
+     * @return string
+     */
+    public function getIp()
+    {
+        return $this->container['ip'];
+    }
+
+    /**
+     * Sets ip
+     *
+     * @param string $ip ip
+     *
+     * @return $this
+     */
+    public function setIp($ip)
+    {
+        $this->container['ip'] = $ip;
+
+        return $this;
+    }
+
+    /**
+     * Gets qr
+     *
+     * @return string
+     */
+    public function getQr()
+    {
+        return $this->container['qr'];
+    }
+
+    /**
+     * Sets qr
+     *
+     * @param string $qr qr
+     *
+     * @return $this
+     */
+    public function setQr($qr)
+    {
+        $this->container['qr'] = $qr;
+
+        return $this;
+    }
+
+    /**
+     * Gets battery
+     *
+     * @return int
+     */
+    public function getBattery()
+    {
+        return $this->container['battery'];
+    }
+
+    /**
+     * Sets battery
+     *
+     * @param int $battery battery
+     *
+     * @return $this
+     */
+    public function setBattery($battery)
+    {
+        $this->container['battery'] = $battery;
+
+        return $this;
+    }
+
+    /**
+     * Gets ride_start
+     *
+     * @return \DateTime
+     */
+    public function getRideStart()
+    {
+        return $this->container['ride_start'];
+    }
+
+    /**
+     * Sets ride_start
+     *
+     * @param \DateTime $ride_start ride_start
+     *
+     * @return $this
+     */
+    public function setRideStart($ride_start)
+    {
+        $this->container['ride_start'] = $ride_start;
 
         return $this;
     }
