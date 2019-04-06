@@ -66,6 +66,7 @@ Method | HTTP request | Description
 [**usersFilterGet**](DefaultApi.md#usersFilterGet) | **GET** /users/filter | Fetch a list of Users filtered by specific email
 [**usersGet**](DefaultApi.md#usersGet) | **GET** /users | Fetch a list of Users
 [**usersIdDelete**](DefaultApi.md#usersIdDelete) | **DELETE** /users/{id} | Delete a User
+[**usersIdGet**](DefaultApi.md#usersIdGet) | **GET** /users/{id} | Get a User
 [**usersIdPut**](DefaultApi.md#usersIdPut) | **PUT** /users/{id} | Update a User
 [**usersPost**](DefaultApi.md#usersPost) | **POST** /users | Create a User
 
@@ -3553,6 +3554,60 @@ Name | Type | Description  | Notes
 ### Return type
 
 void (empty response body)
+
+### Authorization
+
+[basicAuth](../../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **usersIdGet**
+> \Swagger\Client\Model\User usersIdGet($id)
+
+Get a User
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+// Configure HTTP basic authorization: basicAuth
+$config = Swagger\Client\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
+
+
+$apiInstance = new Swagger\Client\Api\DefaultApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$id = 56; // int | 
+
+try {
+    $result = $apiInstance->usersIdGet($id);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->usersIdGet: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int**|  |
+
+### Return type
+
+[**\Swagger\Client\Model\User**](../Model/User.md)
 
 ### Authorization
 

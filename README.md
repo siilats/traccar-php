@@ -151,6 +151,7 @@ Class | Method | HTTP request | Description
 *DefaultApi* | [**usersFilterGet**](docs/Api/DefaultApi.md#usersfilterget) | **GET** /users/filter | Fetch a list of Users filtered by specific email
 *DefaultApi* | [**usersGet**](docs/Api/DefaultApi.md#usersget) | **GET** /users | Fetch a list of Users
 *DefaultApi* | [**usersIdDelete**](docs/Api/DefaultApi.md#usersiddelete) | **DELETE** /users/{id} | Delete a User
+*DefaultApi* | [**usersIdGet**](docs/Api/DefaultApi.md#usersidget) | **GET** /users/{id} | Get a User
 *DefaultApi* | [**usersIdPut**](docs/Api/DefaultApi.md#usersidput) | **PUT** /users/{id} | Update a User
 *DefaultApi* | [**usersPost**](docs/Api/DefaultApi.md#userspost) | **POST** /users | Create a User
 
