@@ -108,7 +108,9 @@ Class | Method | HTTP request | Description
 *DefaultApi* | [**devicesIdDelete**](docs/Api/DefaultApi.md#devicesiddelete) | **DELETE** /devices/{id} | Delete a Device
 *DefaultApi* | [**devicesIdDistancePut**](docs/Api/DefaultApi.md#devicesiddistanceput) | **PUT** /devices/{id}/distance | Update the distance counter of the Device
 *DefaultApi* | [**devicesIdPut**](docs/Api/DefaultApi.md#devicesidput) | **PUT** /devices/{id} | Update a Device
+*DefaultApi* | [**devicesNearestGet**](docs/Api/DefaultApi.md#devicesnearestget) | **GET** /devices/nearest | Searches for nearest Device
 *DefaultApi* | [**devicesPost**](docs/Api/DefaultApi.md#devicespost) | **POST** /devices | Create a Device
+*DefaultApi* | [**devicesRefreshGet**](docs/Api/DefaultApi.md#devicesrefreshget) | **GET** /devices/refresh | Refreshes device online status
 *DefaultApi* | [**driversGet**](docs/Api/DefaultApi.md#driversget) | **GET** /drivers | Fetch a list of Drivers
 *DefaultApi* | [**driversIdDelete**](docs/Api/DefaultApi.md#driversiddelete) | **DELETE** /drivers/{id} | Delete a Driver
 *DefaultApi* | [**driversIdPut**](docs/Api/DefaultApi.md#driversidput) | **PUT** /drivers/{id} | Update a Driver
@@ -128,10 +130,14 @@ Class | Method | HTTP request | Description
 *DefaultApi* | [**notificationsPost**](docs/Api/DefaultApi.md#notificationspost) | **POST** /notifications | Create a Notification
 *DefaultApi* | [**notificationsTestPost**](docs/Api/DefaultApi.md#notificationstestpost) | **POST** /notifications/test | Send test notification to current user via Email and SMS
 *DefaultApi* | [**notificationsTypesGet**](docs/Api/DefaultApi.md#notificationstypesget) | **GET** /notifications/types | Fetch a list of available Notification types
+*DefaultApi* | [**paymentDepositPost**](docs/Api/DefaultApi.md#paymentdepositpost) | **POST** /payment/deposit | Create deposit for a user
+*DefaultApi* | [**paymentRentPost**](docs/Api/DefaultApi.md#paymentrentpost) | **POST** /payment/rent | Create rent for a user
+*DefaultApi* | [**paymentReturnPost**](docs/Api/DefaultApi.md#paymentreturnpost) | **POST** /payment/return | Create return for a user
 *DefaultApi* | [**permissionsDelete**](docs/Api/DefaultApi.md#permissionsdelete) | **DELETE** /permissions | Unlink an Object from another Object
 *DefaultApi* | [**permissionsPost**](docs/Api/DefaultApi.md#permissionspost) | **POST** /permissions | Link an Object to another Object
 *DefaultApi* | [**positionsGet**](docs/Api/DefaultApi.md#positionsget) | **GET** /positions | Fetches a list of Positions
 *DefaultApi* | [**reportsDeviceRouteGet**](docs/Api/DefaultApi.md#reportsdevicerouteget) | **GET** /reports/deviceRoute | Fetch a list of Positions within between start and end points
+*DefaultApi* | [**reportsDisputeGet**](docs/Api/DefaultApi.md#reportsdisputeget) | **GET** /reports/dispute | Fetch a list of Positions within the time period for the Devices or Groups and Users to compare
 *DefaultApi* | [**reportsEventsGet**](docs/Api/DefaultApi.md#reportseventsget) | **GET** /reports/events | Fetch a list of Events within the time period for the Devices or Groups
 *DefaultApi* | [**reportsRouteGet**](docs/Api/DefaultApi.md#reportsrouteget) | **GET** /reports/route | Fetch a list of Positions within the time period for the Devices or Groups
 *DefaultApi* | [**reportsStopsGet**](docs/Api/DefaultApi.md#reportsstopsget) | **GET** /reports/stops | Fetch a list of ReportStops within the time period for the Devices or Groups

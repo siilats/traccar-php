@@ -23,7 +23,9 @@ Method | HTTP request | Description
 [**devicesIdDelete**](DefaultApi.md#devicesIdDelete) | **DELETE** /devices/{id} | Delete a Device
 [**devicesIdDistancePut**](DefaultApi.md#devicesIdDistancePut) | **PUT** /devices/{id}/distance | Update the distance counter of the Device
 [**devicesIdPut**](DefaultApi.md#devicesIdPut) | **PUT** /devices/{id} | Update a Device
+[**devicesNearestGet**](DefaultApi.md#devicesNearestGet) | **GET** /devices/nearest | Searches for nearest Device
 [**devicesPost**](DefaultApi.md#devicesPost) | **POST** /devices | Create a Device
+[**devicesRefreshGet**](DefaultApi.md#devicesRefreshGet) | **GET** /devices/refresh | Refreshes device online status
 [**driversGet**](DefaultApi.md#driversGet) | **GET** /drivers | Fetch a list of Drivers
 [**driversIdDelete**](DefaultApi.md#driversIdDelete) | **DELETE** /drivers/{id} | Delete a Driver
 [**driversIdPut**](DefaultApi.md#driversIdPut) | **PUT** /drivers/{id} | Update a Driver
@@ -43,10 +45,14 @@ Method | HTTP request | Description
 [**notificationsPost**](DefaultApi.md#notificationsPost) | **POST** /notifications | Create a Notification
 [**notificationsTestPost**](DefaultApi.md#notificationsTestPost) | **POST** /notifications/test | Send test notification to current user via Email and SMS
 [**notificationsTypesGet**](DefaultApi.md#notificationsTypesGet) | **GET** /notifications/types | Fetch a list of available Notification types
+[**paymentDepositPost**](DefaultApi.md#paymentDepositPost) | **POST** /payment/deposit | Create deposit for a user
+[**paymentRentPost**](DefaultApi.md#paymentRentPost) | **POST** /payment/rent | Create rent for a user
+[**paymentReturnPost**](DefaultApi.md#paymentReturnPost) | **POST** /payment/return | Create return for a user
 [**permissionsDelete**](DefaultApi.md#permissionsDelete) | **DELETE** /permissions | Unlink an Object from another Object
 [**permissionsPost**](DefaultApi.md#permissionsPost) | **POST** /permissions | Link an Object to another Object
 [**positionsGet**](DefaultApi.md#positionsGet) | **GET** /positions | Fetches a list of Positions
 [**reportsDeviceRouteGet**](DefaultApi.md#reportsDeviceRouteGet) | **GET** /reports/deviceRoute | Fetch a list of Positions within between start and end points
+[**reportsDisputeGet**](DefaultApi.md#reportsDisputeGet) | **GET** /reports/dispute | Fetch a list of Positions within the time period for the Devices or Groups and Users to compare
 [**reportsEventsGet**](DefaultApi.md#reportsEventsGet) | **GET** /reports/events | Fetch a list of Events within the time period for the Devices or Groups
 [**reportsRouteGet**](DefaultApi.md#reportsRouteGet) | **GET** /reports/route | Fetch a list of Positions within the time period for the Devices or Groups
 [**reportsStopsGet**](DefaultApi.md#reportsStopsGet) | **GET** /reports/stops | Fetch a list of ReportStops within the time period for the Devices or Groups
@@ -1144,6 +1150,64 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
+# **devicesNearestGet**
+> \Swagger\Client\Model\Device devicesNearestGet($tractoken, $latitude, $longitude)
+
+Searches for nearest Device
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+// Configure HTTP basic authorization: basicAuth
+$config = Swagger\Client\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
+
+
+$apiInstance = new Swagger\Client\Api\DefaultApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$tractoken = "tractoken_example"; // string | 
+$latitude = 8.14; // float | 
+$longitude = 8.14; // float | 
+
+try {
+    $result = $apiInstance->devicesNearestGet($tractoken, $latitude, $longitude);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->devicesNearestGet: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **tractoken** | **string**|  |
+ **latitude** | **float**|  |
+ **longitude** | **float**|  |
+
+### Return type
+
+[**\Swagger\Client\Model\Device**](../Model/Device.md)
+
+### Authorization
+
+[basicAuth](../../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
 # **devicesPost**
 > \Swagger\Client\Model\Device devicesPost($body)
 
@@ -1186,6 +1250,61 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**\Swagger\Client\Model\Device**](../Model/Device.md)
+
+### Authorization
+
+[basicAuth](../../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **devicesRefreshGet**
+> devicesRefreshGet($force)
+
+Refreshes device online status
+
+Without any params, returns OK response if refreshed successfully
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+// Configure HTTP basic authorization: basicAuth
+$config = Swagger\Client\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
+
+
+$apiInstance = new Swagger\Client\Api\DefaultApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$force = true; // bool | If true offline devices updated within a day will be forcefully refreshed
+
+try {
+    $apiInstance->devicesRefreshGet($force);
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->devicesRefreshGet: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **force** | **bool**| If true offline devices updated within a day will be forcefully refreshed | [optional]
+
+### Return type
+
+void (empty response body)
 
 ### Authorization
 
@@ -2253,6 +2372,180 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
+# **paymentDepositPost**
+> \Swagger\Client\Model\User paymentDepositPost($tractoken, $bike, $stripe_source, $stripe_amount, $bike_amount)
+
+Create deposit for a user
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+// Configure HTTP basic authorization: basicAuth
+$config = Swagger\Client\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
+
+
+$apiInstance = new Swagger\Client\Api\DefaultApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$tractoken = "tractoken_example"; // string | Trac token used to authenticate user
+$bike = "bike_example"; // string | QR code of the bike to rent
+$stripe_source = "stripe_source_example"; // string | Source that we want to charge
+$stripe_amount = 56; // int | Amount that we should charge
+$bike_amount = "bike_amount_example"; // string | Number of scooters that the deposit authorizes user to rent
+
+try {
+    $result = $apiInstance->paymentDepositPost($tractoken, $bike, $stripe_source, $stripe_amount, $bike_amount);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->paymentDepositPost: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **tractoken** | **string**| Trac token used to authenticate user |
+ **bike** | **string**| QR code of the bike to rent |
+ **stripe_source** | **string**| Source that we want to charge |
+ **stripe_amount** | **int**| Amount that we should charge |
+ **bike_amount** | **string**| Number of scooters that the deposit authorizes user to rent | [optional]
+
+### Return type
+
+[**\Swagger\Client\Model\User**](../Model/User.md)
+
+### Authorization
+
+[basicAuth](../../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/x-www-form-urlencoded
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **paymentRentPost**
+> \Swagger\Client\Model\User paymentRentPost($tractoken, $bike, $bike_amount)
+
+Create rent for a user
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+// Configure HTTP basic authorization: basicAuth
+$config = Swagger\Client\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
+
+
+$apiInstance = new Swagger\Client\Api\DefaultApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$tractoken = "tractoken_example"; // string | Trac token used to authenticate user
+$bike = "bike_example"; // string | QR code of the bike to rent
+$bike_amount = "bike_amount_example"; // string | Number of scooters that the deposit authorizes user to rent
+
+try {
+    $result = $apiInstance->paymentRentPost($tractoken, $bike, $bike_amount);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->paymentRentPost: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **tractoken** | **string**| Trac token used to authenticate user |
+ **bike** | **string**| QR code of the bike to rent |
+ **bike_amount** | **string**| Number of scooters that the deposit authorizes user to rent | [optional]
+
+### Return type
+
+[**\Swagger\Client\Model\User**](../Model/User.md)
+
+### Authorization
+
+[basicAuth](../../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/x-www-form-urlencoded
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **paymentReturnPost**
+> \Swagger\Client\Model\User paymentReturnPost($tractoken)
+
+Create return for a user
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+// Configure HTTP basic authorization: basicAuth
+$config = Swagger\Client\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
+
+
+$apiInstance = new Swagger\Client\Api\DefaultApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$tractoken = "tractoken_example"; // string | Trac token used to authenticate user
+
+try {
+    $result = $apiInstance->paymentReturnPost($tractoken);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->paymentReturnPost: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **tractoken** | **string**| Trac token used to authenticate user |
+
+### Return type
+
+[**\Swagger\Client\Model\User**](../Model/User.md)
+
+### Authorization
+
+[basicAuth](../../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/x-www-form-urlencoded
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
 # **permissionsDelete**
 > permissionsDelete($body)
 
@@ -2479,6 +2772,70 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: application/json
  - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **reportsDisputeGet**
+> \Swagger\Client\Model\Position[] reportsDisputeGet($from, $to, $device_id, $user_id, $group_id)
+
+Fetch a list of Positions within the time period for the Devices or Groups and Users to compare
+
+At least one _deviceId_ or one _groupId_ must be passed
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+// Configure HTTP basic authorization: basicAuth
+$config = Swagger\Client\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
+
+
+$apiInstance = new Swagger\Client\Api\DefaultApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$from = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | in IS0 8601 format. eg. `1963-11-22T18:30:00Z`
+$to = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | in IS0 8601 format. eg. `1963-11-22T18:30:00Z`
+$device_id = array(56); // int[] | 
+$user_id = array(56); // int[] | 
+$group_id = array(56); // int[] | 
+
+try {
+    $result = $apiInstance->reportsDisputeGet($from, $to, $device_id, $user_id, $group_id);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->reportsDisputeGet: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **from** | **\DateTime**| in IS0 8601 format. eg. &#x60;1963-11-22T18:30:00Z&#x60; |
+ **to** | **\DateTime**| in IS0 8601 format. eg. &#x60;1963-11-22T18:30:00Z&#x60; |
+ **device_id** | [**int[]**](../Model/int.md)|  | [optional]
+ **user_id** | [**int[]**](../Model/int.md)|  | [optional]
+ **group_id** | [**int[]**](../Model/int.md)|  | [optional]
+
+### Return type
+
+[**\Swagger\Client\Model\Position[]**](../Model/Position.md)
+
+### Authorization
+
+[basicAuth](../../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
+ - **Accept**: application/json, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
